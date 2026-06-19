@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medvance Prep — Elite MCAT Tutoring, Matched to You</title>
+  <meta
+    name="description"
+    content="Medvance Prep pairs you 1-on-1 with a top 1% MCAT scorer matched to your exact weaknesses, backed by a 10+ point guarantee. Less stress, more score."
+  />
+
+  <!-- FONTS: Inter via Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CALENDLY: stylesheet (widget.js is loaded before </body>) -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+
+  <!-- TAILWIND: CDN (zero build) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- TAILWIND CONFIG: brand colors must load before usage -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: "#0A1F44",
+              50: "#E7ECF4",
+              100: "#C4D0E4",
+              700: "#0F2A5C",
+              800: "#0A1F44",
+              900: "#06142E",
+            },
+            teal: {
+              DEFAULT: "#06B6D4",
+              hover: "#0891B2",
+            },
+            offwhite: "#F8FAFC",
+            slatebody: "#475569",
+          },
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+          },
+          boxShadow: {
+            soft: "0 10px 30px -12px rgba(10, 31, 68, 0.15)",
+            lift: "0 24px 50px -16px rgba(10, 31, 68, 0.28)",
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- CUSTOM STYLES -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    }
+    /* Account for sticky navbar height when jumping to anchors */
+    section[id],
+    div[id="booking"] {
+      scroll-margin-top: 88px;
+    }
+    /* Subtle hero radial texture */
+    .hero-texture {
+      background-image:
+        radial-gradient(circle at 15% 20%, rgba(6, 182, 212, 0.12), transparent 40%),
+        radial-gradient(circle at 85% 0%, rgba(6, 182, 212, 0.10), transparent 45%);
+    }
+    .guarantee-texture {
+      background-image:
+        radial-gradient(circle at 10% 10%, rgba(6, 182, 212, 0.22), transparent 38%),
+        radial-gradient(circle at 90% 90%, rgba(6, 182, 212, 0.16), transparent 42%);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-navy antialiased">
+  <!-- NAVBAR -->
+  <header
+    id="navbar"
+    class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-transparent"
+  >
+    <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <!-- Wordmark -->
+      <a href="#top" class="flex items-center gap-1.5 font-extrabold text-xl tracking-tight text-navy">
+        Medvance Prep
+        <span class="inline-block w-2 h-2 rounded-full bg-teal mt-2"></span>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#features" class="text-sm font-semibold text-slatebody hover:text-navy transition-colors">The Advantage</a>
+        <a href="#guarantee" class="text-sm font-semibold text-slatebody hover:text-navy transition-colors">Guarantee</a>
+        <a href="#pricing" class="text-sm font-semibold text-slatebody hover:text-navy transition-colors">Pricing</a>
+        <a
+          href="#booking"
+          class="inline-flex items-center justify-center rounded-xl bg-teal hover:bg-teal-hover text-white text-sm font-bold px-5 py-2.5 shadow-soft transition-all hover:-translate-y-0.5"
+        >
+          Book Free Consultation
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button
+        id="menu-btn"
+        class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-navy hover:bg-offwhite transition-colors"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile dropdown panel -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-navy-50 bg-white/95 backdrop-blur-md">
+      <div class="px-5 py-4 flex flex-col gap-2">
+        <a href="#features" class="mobile-link px-3 py-2.5 rounded-lg text-base font-semibold text-slatebody hover:bg-offwhite hover:text-navy">The Advantage</a>
+        <a href="#guarantee" class="mobile-link px-3 py-2.5 rounded-lg text-base font-semibold text-slatebody hover:bg-offwhite hover:text-navy">Guarantee</a>
+        <a href="#pricing" class="mobile-link px-3 py-2.5 rounded-lg text-base font-semibold text-slatebody hover:bg-offwhite hover:text-navy">Pricing</a>
+        <a href="#booking" class="mobile-link mt-1 inline-flex items-center justify-center rounded-xl bg-teal hover:bg-teal-hover text-white text-base font-bold px-5 py-3 shadow-soft">
+          Book Free Consultation
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <span id="top"></span>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-white hero-texture pt-36 pb-24 sm:pt-44 sm:pb-32">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8 text-center">
+      <!-- Eyebrow -->
+      <div class="inline-flex items-center gap-2 rounded-full border border-navy-100 bg-offwhite px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-navy mb-7">
+        <span class="w-1.5 h-1.5 rounded-full bg-teal"></span>
+        Elite 1-on-1 MCAT Matchmaking
+      </div>
+
+      <!-- Headline -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-navy">
+        Matched With Elite MCAT Tutors
+        <span class="block text-teal">Who've Already Conquered the Exam.</span>
+      </h1>
+
+      <!-- Sub-headline -->
+      <p class="mt-6 text-lg sm:text-xl leading-relaxed text-slatebody max-w-3xl mx-auto">
+        We pair you 1-on-1 with a top 1% scorer matched to your exact weaknesses —
+        backed by a <span class="font-semibold text-navy">10+ point guarantee</span>.
+        Less stress, more score, and a clear path to a competitive application.
+      </p>
+
+      <!-- CTAs -->
+      <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="#booking"
+          class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-teal hover:bg-teal-hover text-white text-base font-bold px-8 py-4 shadow-soft transition-all hover:-translate-y-0.5"
+        >
+          Book Your Free Consultation
+        </a>
+        <a
+          href="#pricing"
+          class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl border-2 border-navy-100 text-navy hover:border-teal hover:text-teal text-base font-bold px-8 py-4 transition-all hover:-translate-y-0.5"
+        >
+          View Packages
+        </a>
+      </div>
+
+      <!-- Trust badges -->
+      <div class="mt-12 flex flex-wrap items-center justify-center gap-3">
+        <!-- Badge: Verified 515+ Scorers -->
+        <span class="inline-flex items-center gap-2 rounded-full bg-white border border-navy-100 px-4 py-2 text-sm font-semibold text-navy shadow-soft">
+          <svg class="w-4 h-4 text-teal" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.784.57-1.838-.196-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.075 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.286-3.957z"/></svg>
+          Verified 515+ Scorers
+        </span>
+        <!-- Badge: Top 1% Tutors -->
+        <span class="inline-flex items-center gap-2 rounded-full bg-white border border-navy-100 px-4 py-2 text-sm font-semibold text-navy shadow-soft">
+          <svg class="w-4 h-4 text-teal" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1.5l2.317 4.695 5.183.753-3.75 3.655.885 5.162L10 13.347l-4.635 2.438.885-5.162-3.75-3.655 5.183-.753L10 1.5z" clip-rule="evenodd"/></svg>
+          Top 1% Tutors
+        </span>
+        <!-- Badge: 10+ Point Guarantee -->
+        <span class="inline-flex items-center gap-2 rounded-full bg-white border border-navy-100 px-4 py-2 text-sm font-semibold text-navy shadow-soft">
+          <svg class="w-4 h-4 text-teal" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1.5l6.5 2.5v5c0 4.5-3 7.5-6.5 9-3.5-1.5-6.5-4.5-6.5-9v-5L10 1.5zm3.04 6.21a1 1 0 00-1.58-1.22l-2.3 2.98-1.02-1.02a1 1 0 10-1.42 1.42l1.85 1.85a1 1 0 001.5-.1l3.0-3.89z" clip-rule="evenodd"/></svg>
+          10+ Point Guarantee
+        </span>
+        <!-- Badge: 100% Custom-Matched -->
+        <span class="inline-flex items-center gap-2 rounded-full bg-white border border-navy-100 px-4 py-2 text-sm font-semibold text-navy shadow-soft">
+          <svg class="w-4 h-4 text-teal" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
+          100% Custom-Matched
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section id="guarantee" class="relative overflow-hidden bg-navy-800 guarantee-texture text-white py-24">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8 text-center">
+      <!-- Shield badge -->
+      <div class="mx-auto mb-8 flex items-center justify-center w-20 h-20 rounded-2xl bg-teal/15 ring-1 ring-teal/40">
+        <svg class="w-11 h-11 text-teal" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 1l7 2.7v5.4c0 4.86-3.24 8.1-7 9.9-3.76-1.8-7-5.04-7-9.9V3.7L10 1zm3.28 6.7a1 1 0 00-1.56-1.24l-2.62 3.28-1.18-1.18a1 1 0 10-1.42 1.42l2 2a1 1 0 001.5-.09l3.28-4.19z" clip-rule="evenodd"/>
+        </svg>
+      </div>
+
+      <p class="text-sm font-bold uppercase tracking-[0.2em] text-teal mb-4">The Medvance Guarantee</p>
+
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight">
+        10+ Point Increase —<br class="hidden sm:block" />
+        <span class="text-teal">Or Your Money Back.</span><a href="#legal" class="text-teal align-super text-2xl">*</a>
+      </h2>
+
+      <p class="mt-7 text-lg sm:text-xl leading-relaxed text-navy-50/90 max-w-3xl mx-auto">
+        We are confident in our matchmaking method because it works. When the right student
+        meets the right expert, scores move. That conviction is why we put our own revenue on
+        the line — removing the financial risk from one of the most important decisions your
+        family will make.
+      </p>
+
+      <!-- Reassurance sub-points -->
+      <div class="mt-12 grid sm:grid-cols-3 gap-6 text-left">
+        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-5 h-5 text-teal" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
+            <h3 class="font-bold text-white">Risk-Free Investment</h3>
+          </div>
+          <p class="text-sm text-navy-50/80 leading-relaxed">Your tuition is protected. Meet the conditions and don't hit the gain — you don't pay.</p>
+        </div>
+        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-5 h-5 text-teal" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
+            <h3 class="font-bold text-white">Accountability Built In</h3>
+          </div>
+          <p class="text-sm text-navy-50/80 leading-relaxed">Tracked diagnostics and structured homework keep both you and your tutor on target.</p>
+        </div>
+        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-5 h-5 text-teal" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
+            <h3 class="font-bold text-white">We Only Win When You Win</h3>
+          </div>
+          <p class="text-sm text-navy-50/80 leading-relaxed">Our incentives are aligned with your result — your score increase is our success metric.</p>
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <a href="#pricing" class="inline-flex items-center justify-center rounded-xl bg-teal hover:bg-teal-hover text-white text-base font-bold px-8 py-4 shadow-lift transition-all hover:-translate-y-0.5">
+          See Guaranteed Packages
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES / EXPERT MATCH ADVANTAGE -->
+  <section id="features" class="bg-white py-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-teal mb-4">The Expert Match Advantage</p>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy">
+          Generic tutoring breaks plateaus by accident. We do it by design.
+        </h2>
+        <p class="mt-5 text-lg text-slatebody leading-relaxed">
+          You're not assigned the next available tutor. You're hand-matched to a verified top 1%
+          specialist for your exact weak sections —
+          <span class="font-semibold text-navy">CARS, Chem/Phys, Bio/Biochem, and Psych/Soc</span> —
+          so every hour is spent where it moves your score.
+        </p>
+      </div>
+
+      <!-- Process / feature grid -->
+      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Step 1 -->
+        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-teal">
+          <div class="flex items-center justify-between mb-5">
+            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-offwhite text-teal group-hover:bg-teal group-hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2a4 4 0 014-4h0m-7 6h.01M21 21l-3-3m1-5a5 5 0 11-10 0 5 5 0 0110 0z"/></svg>
+            </div>
+            <span class="text-sm font-extrabold text-navy-100">01</span>
+          </div>
+          <h3 class="text-lg font-bold text-navy mb-2">Diagnostic & Profile</h3>
+          <p class="text-sm text-slatebody leading-relaxed">A full diagnostic pinpoints your exact section weaknesses and target score — no guessing.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-teal">
+          <div class="flex items-center justify-between mb-5">
+            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-offwhite text-teal group-hover:bg-teal group-hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4zm6 0a3 3 0 10-3-3"/></svg>
+            </div>
+            <span class="text-sm font-extrabold text-navy-100">02</span>
+          </div>
+          <h3 class="text-lg font-bold text-navy mb-2">Expert Match</h3>
+          <p class="text-sm text-slatebody leading-relaxed">You're hand-paired with a verified specialist who scored in the top 1% on your weak sections.</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-teal">
+          <div class="flex items-center justify-between mb-5">
+            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-offwhite text-teal group-hover:bg-teal group-hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+            </div>
+            <span class="text-sm font-extrabold text-navy-100">03</span>
+          </div>
+          <h3 class="text-lg font-bold text-navy mb-2">Targeted Plan</h3>
+          <p class="text-sm text-slatebody leading-relaxed">A custom study roadmap built around your gaps and timeline — never generic, recycled content.</p>
+        </div>
+        <!-- Step 4 -->
+        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-teal">
+          <div class="flex items-center justify-between mb-5">
+            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-offwhite text-teal group-hover:bg-teal group-hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8M21 7h-4m4 0v4"/></svg>
+            </div>
+            <span class="text-sm font-extrabold text-navy-100">04</span>
+          </div>
+          <h3 class="text-lg font-bold text-navy mb-2">Plateau Breakthrough</h3>
+          <p class="text-sm text-slatebody leading-relaxed">Measurable, tracked score gains — guaranteed. We turn a stalled score into a competitive one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="bg-offwhite py-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-teal mb-4">Tutoring Packages</p>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy">
+          Choose the path to your score.
+        </h2>
+        <p class="mt-5 text-lg text-slatebody leading-relaxed">
+          Every package is delivered by a hand-matched top 1% expert and
+          <span class="font-semibold text-navy">backed by our 10+ Point Guarantee.</span>
+        </p>
+      </div>
+
+      <div class="mt-16 grid lg:grid-cols-3 gap-7 lg:gap-6 items-start">
+        <!-- TIER 1: 5-Hour Targeted Review -->
+        <div class="rounded-2xl bg-white border border-navy-100 p-8 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+          <h3 class="text-xl font-bold text-navy">5-Hour Targeted Review</h3>
+          <p class="mt-2 text-sm text-slatebody leading-relaxed">Focused, last-mile fixes on a single weak section before test day.</p>
+          <div class="mt-6 flex items-baseline gap-1">
+            <!-- PRICE: edit this value for the 5-Hour tier -->
+            <span class="text-4xl font-extrabold text-navy">$X,XXX</span>
+            <span class="text-sm font-medium text-slatebody">/ package</span>
+          </div>
+          <ul class="mt-7 space-y-3.5 text-sm text-slatebody">
+            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg><span><span class="font-semibold text-navy">5 hours</span> of 1-on-1 expert time</span></li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Single-section custom study plan</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Homework review & feedback</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg><span class="font-semibold text-navy">Backed by our 10+ Point Guarantee</span></li>
+          </ul>
+          <!-- STRIPE: Replace href="#" with your Stripe Payment Link for the 5-Hour tier -->
+          <a href="#" class="mt-8 inline-flex w-full items-center justify-center rounded-xl border-2 border-navy text-navy hover:bg-navy hover:text-white text-base font-bold px-6 py-3.5 transition-all">
+            Enroll Now
+          </a>
+        </div>
+
+        <!-- TIER 2: 10-Hour Score Breakthrough (MOST POPULAR) -->
+        <div class="relative rounded-2xl bg-navy-800 text-white border-2 border-teal p-8 shadow-lift transition-all duration-300 hover:-translate-y-1.5 lg:scale-[1.04]">
+          <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full bg-teal px-4 py-1.5 text-xs font-extrabold uppercase tracking-wider text-white shadow-soft">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.784.57-1.838-.196-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.075 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.286-3.957z"/></svg>
+            Most Popular
+          </span>
+          <h3 class="text-xl font-bold text-white">10-Hour Score Breakthrough</h3>
+          <p class="mt-2 text-sm text-navy-50/80 leading-relaxed">The comprehensive plateau-breaker — our most chosen path to a 10+ point lift.</p>
+          <div class="mt-6 flex items-baseline gap-1">
+            <!-- PRICE: edit this value for the 10-Hour tier -->
+            <span class="text-4xl font-extrabold text-white">$X,XXX</span>
+            <span class="text-sm font-medium text-navy-50/70">/ package</span>
+          </div>
+          <ul class="mt-7 space-y-3.5 text-sm text-navy-50/90">
+            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg><span><span class="font-semibold text-white">10 hours</span> of 1-on-1 expert time</span></li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Multi-section custom study plan</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Full diagnostic analysis</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Homework review & progress tracking</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg><span class="font-semibold text-white">Backed by our 10+ Point Guarantee</span></li>
+          </ul>
+          <!-- STRIPE: Replace href="#" with your Stripe Payment Link for the 10-Hour tier -->
+          <a href="#" class="mt-8 inline-flex w-full items-center justify-center rounded-xl bg-teal hover:bg-teal-hover text-white text-base font-bold px-6 py-3.5 shadow-soft transition-all">
+            Enroll Now
+          </a>
+        </div>
+
+        <!-- TIER 3: 20-Hour Elite Masterclass -->
+        <div class="rounded-2xl bg-white border border-navy-100 p-8 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+          <h3 class="text-xl font-bold text-navy">20-Hour Elite Masterclass</h3>
+          <p class="mt-2 text-sm text-slatebody leading-relaxed">Full end-to-end transformation for maximum score lift across every section.</p>
+          <div class="mt-6 flex items-baseline gap-1">
+            <!-- PRICE: edit this value for the 20-Hour tier -->
+            <span class="text-4xl font-extrabold text-navy">$X,XXX</span>
+            <span class="text-sm font-medium text-slatebody">/ package</span>
+          </div>
+          <ul class="mt-7 space-y-3.5 text-sm text-slatebody">
+            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg><span><span class="font-semibold text-navy">20 hours</span> of 1-on-1 expert time</span></li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Full multi-tutor expert matching</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>End-to-end custom study roadmap</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Homework review & progress tracking</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Priority scheduling</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg><span class="font-semibold text-navy">Backed by our 10+ Point Guarantee</span></li>
+          </ul>
+          <!-- STRIPE: Replace href="#" with your Stripe Payment Link for the 20-Hour tier -->
+          <a href="#" class="mt-8 inline-flex w-full items-center justify-center rounded-xl border-2 border-navy text-navy hover:bg-navy hover:text-white text-base font-bold px-6 py-3.5 transition-all">
+            Enroll Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING / CALENDLY -->
+  <section id="booking" class="bg-white py-24">
+    <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center">
+      <p class="text-sm font-bold uppercase tracking-[0.2em] text-teal mb-4">Free Consultation</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy">
+        Book Your Free Strategy Consultation
+      </h2>
+      <p class="mt-5 text-lg text-slatebody leading-relaxed max-w-2xl mx-auto">
+        In 30 minutes we'll review your timeline, pinpoint your plateau, and map out the exact
+        expert match that gets you to your target score. No pressure — just a clear plan.
+      </p>
+
+      <!-- CALENDLY: Replace YOUR_LINK below with your real Calendly scheduling slug -->
+      <div class="mt-12 rounded-2xl border border-navy-100 bg-white shadow-soft overflow-hidden">
+        <div
+          class="calendly-inline-widget"
+          data-url="https://calendly.com/YOUR_LINK"
+          style="min-width:320px;height:700px;"
+        ></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-900 text-white">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16">
+      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+        <!-- Brand -->
+        <div class="max-w-sm">
+          <a href="#top" class="flex items-center gap-1.5 font-extrabold text-xl tracking-tight text-white">
+            Medvance Prep
+            <span class="inline-block w-2 h-2 rounded-full bg-teal mt-2"></span>
+          </a>
+          <p class="mt-4 text-sm text-navy-50/70 leading-relaxed">
+            Elite MCAT matchmaking. We pair driven pre-med students with top 1% tutors to break
+            score plateaus and build competitive applications.
+          </p>
+        </div>
+
+        <!-- Quick links -->
+        <nav class="flex flex-col gap-3 text-sm">
+          <span class="font-bold uppercase tracking-wider text-navy-50/50 text-xs mb-1">Explore</span>
+          <a href="#features" class="text-navy-50/80 hover:text-teal transition-colors">The Advantage</a>
+          <a href="#guarantee" class="text-navy-50/80 hover:text-teal transition-colors">Guarantee</a>
+          <a href="#pricing" class="text-navy-50/80 hover:text-teal transition-colors">Pricing</a>
+          <a href="#booking" class="text-navy-50/80 hover:text-teal transition-colors">Book a Consultation</a>
+        </nav>
+      </div>
+
+      <hr class="my-10 border-white/10" />
+
+      <!-- Legal footnote -->
+      <div id="legal" class="text-xs text-navy-50/60 leading-relaxed max-w-4xl">
+        <p class="font-semibold text-navy-50/80 mb-1">* Terms &amp; Conditions Apply — 10+ Point Guarantee</p>
+        <p>
+          The 10+ point increase guarantee requires 100% session attendance and completion of all
+          assigned diagnostic exams and homework. The guarantee applies only to enrolled students
+          who meet these conditions and complete the full scope of their selected package. Score
+          increase is measured against the diagnostic baseline established at the start of the
+          program. Medvance Prep reserves the right to determine eligibility based on documented
+          program compliance.
+        </p>
+      </div>
+
+      <p class="mt-8 text-xs text-navy-50/50">
+        &copy; <span id="year"></span> Medvance Prep. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Navbar shadow + border on scroll
+    const navbar = document.getElementById("navbar");
+    const onScroll = () => {
+      if (window.scrollY > 8) {
+        navbar.classList.add("shadow-soft", "border-navy-50");
+        navbar.classList.remove("border-transparent");
+      } else {
+        navbar.classList.remove("shadow-soft", "border-navy-50");
+        navbar.classList.add("border-transparent");
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuIcon = document.getElementById("menu-icon");
+    const closeIcon = document.getElementById("close-icon");
+
+    const setMenu = (open) => {
+      mobileMenu.classList.toggle("hidden", !open);
+      menuIcon.classList.toggle("hidden", open);
+      closeIcon.classList.toggle("hidden", !open);
+      menuBtn.setAttribute("aria-expanded", String(open));
+    };
+    menuBtn.addEventListener("click", () => {
+      setMenu(mobileMenu.classList.contains("hidden"));
+    });
+    // Close mobile menu after selecting a link
+    document.querySelectorAll(".mobile-link").forEach((link) => {
+      link.addEventListener("click", () => setMenu(false));
+    });
+
+    // Smooth scroll with sticky-navbar offset (JS fallback for all anchor links)
+    const NAV_OFFSET = 80;
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        const id = this.getAttribute("href");
+        if (id === "#" || id.length < 2) return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
+        window.scrollTo({ top, behavior: "smooth" });
+      });
+    });
+  </script>
+
+  <!-- CALENDLY: widget script (loaded async before </body>) -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
