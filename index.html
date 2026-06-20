@@ -9,11 +9,11 @@
     content="Medvance Prep pairs you 1-on-1 with a top 1% MCAT scorer matched to your exact weaknesses, backed by a 10+ point guarantee. Less stress, more score."
   />
 
-  <!-- FONTS: Inter via Google Fonts -->
+  <!-- FONTS: Inter (body) + Playfair Display (prestige headings) via Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap"
     rel="stylesheet"
   />
 
@@ -29,23 +29,35 @@
       theme: {
         extend: {
           colors: {
+            // Deep, authoritative navy — primary
             navy: {
               DEFAULT: "#0A1F44",
-              50: "#E7ECF4",
-              100: "#C4D0E4",
-              700: "#0F2A5C",
+              50: "#EEF2F8",
+              100: "#D6DEEC",
+              200: "#A9B8D4",
+              700: "#13306B",
               800: "#0A1F44",
               900: "#06142E",
             },
-            teal: {
-              DEFAULT: "#06B6D4",
-              hover: "#0891B2",
+            // Rich emerald — primary buttons, checks, CTAs
+            emerald: {
+              DEFAULT: "#047857",
+              light: "#059669",
+              hover: "#065F46",
+              50: "#ECFDF5",
+            },
+            // Sophisticated gold — prestige accents (certificate, score badges, seals)
+            gold: {
+              DEFAULT: "#C8A45C",
+              light: "#E4CD92",
+              dark: "#9C7C32",
             },
             offwhite: "#F8FAFC",
             slatebody: "#475569",
           },
           fontFamily: {
             sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+            serif: ["Playfair Display", "ui-serif", "Georgia", "serif"],
           },
           boxShadow: {
             soft: "0 10px 30px -12px rgba(10, 31, 68, 0.15)",
@@ -69,16 +81,57 @@
     div[id="booking"] {
       scroll-margin-top: 88px;
     }
-    /* Subtle hero radial texture */
+
+    /* Subtle hero wash */
     .hero-texture {
       background-image:
-        radial-gradient(circle at 15% 20%, rgba(6, 182, 212, 0.12), transparent 40%),
-        radial-gradient(circle at 85% 0%, rgba(6, 182, 212, 0.10), transparent 45%);
+        radial-gradient(circle at 15% 15%, rgba(4, 120, 87, 0.07), transparent 42%),
+        radial-gradient(circle at 88% 0%, rgba(200, 164, 92, 0.10), transparent 45%);
     }
-    .guarantee-texture {
+
+    /* GUARANTEE: depth gradient + fine micro-grid pattern */
+    .guarantee-depth {
+      background-color: #0A1F44;
       background-image:
-        radial-gradient(circle at 10% 10%, rgba(6, 182, 212, 0.22), transparent 38%),
-        radial-gradient(circle at 90% 90%, rgba(6, 182, 212, 0.16), transparent 42%);
+        radial-gradient(circle at 50% -10%, rgba(200, 164, 92, 0.16), transparent 55%),
+        radial-gradient(circle at 8% 110%, rgba(4, 120, 87, 0.22), transparent 48%),
+        linear-gradient(180deg, #0A1F44 0%, #06142E 100%);
+    }
+    .micro-grid {
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+      background-size: 30px 30px;
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 55%, transparent 100%);
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 55%, transparent 100%);
+    }
+
+    /* CERTIFICATE frame for the guarantee headline box */
+    .certificate {
+      border: 2px solid rgba(200, 164, 92, 0.6);
+      box-shadow:
+        inset 0 0 0 1px rgba(200, 164, 92, 0.28),
+        0 30px 60px -25px rgba(0, 0, 0, 0.55);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+    }
+    /* Certificate corner flourishes */
+    .cert-corner {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      border-color: #C8A45C;
+      border-style: solid;
+      border-width: 0;
+    }
+    .cert-corner.tl { top: 12px; left: 12px; border-top-width: 2px; border-left-width: 2px; }
+    .cert-corner.tr { top: 12px; right: 12px; border-top-width: 2px; border-right-width: 2px; }
+    .cert-corner.bl { bottom: 12px; left: 12px; border-bottom-width: 2px; border-left-width: 2px; }
+    .cert-corner.br { bottom: 12px; right: 12px; border-bottom-width: 2px; border-right-width: 2px; }
+
+    /* Tutor headshot gold ring */
+    .headshot-ring {
+      background: conic-gradient(from 180deg, #E4CD92, #C8A45C, #9C7C32, #C8A45C, #E4CD92);
     }
   </style>
 </head>
@@ -91,19 +144,20 @@
   >
     <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <!-- Wordmark -->
-      <a href="#top" class="flex items-center gap-1.5 font-extrabold text-xl tracking-tight text-navy">
+      <a href="#top" class="flex items-center gap-1.5 font-serif font-extrabold text-xl tracking-tight text-navy">
         Medvance Prep
-        <span class="inline-block w-2 h-2 rounded-full bg-teal mt-2"></span>
+        <span class="inline-block w-2 h-2 rounded-full bg-gold mt-2"></span>
       </a>
 
       <!-- Desktop links -->
-      <div class="hidden md:flex items-center gap-8">
+      <div class="hidden md:flex items-center gap-7">
         <a href="#features" class="text-sm font-semibold text-slatebody hover:text-navy transition-colors">The Advantage</a>
+        <a href="#tutors" class="text-sm font-semibold text-slatebody hover:text-navy transition-colors">Our Tutors</a>
         <a href="#guarantee" class="text-sm font-semibold text-slatebody hover:text-navy transition-colors">Guarantee</a>
         <a href="#pricing" class="text-sm font-semibold text-slatebody hover:text-navy transition-colors">Pricing</a>
         <a
           href="#booking"
-          class="inline-flex items-center justify-center rounded-xl bg-teal hover:bg-teal-hover text-white text-sm font-bold px-5 py-2.5 shadow-soft transition-all hover:-translate-y-0.5"
+          class="inline-flex items-center justify-center rounded-xl bg-emerald hover:bg-emerald-hover text-white text-sm font-bold px-5 py-2.5 shadow-soft transition-all hover:-translate-y-0.5"
         >
           Book Free Consultation
         </a>
@@ -129,9 +183,10 @@
     <div id="mobile-menu" class="md:hidden hidden border-t border-navy-50 bg-white/95 backdrop-blur-md">
       <div class="px-5 py-4 flex flex-col gap-2">
         <a href="#features" class="mobile-link px-3 py-2.5 rounded-lg text-base font-semibold text-slatebody hover:bg-offwhite hover:text-navy">The Advantage</a>
+        <a href="#tutors" class="mobile-link px-3 py-2.5 rounded-lg text-base font-semibold text-slatebody hover:bg-offwhite hover:text-navy">Our Tutors</a>
         <a href="#guarantee" class="mobile-link px-3 py-2.5 rounded-lg text-base font-semibold text-slatebody hover:bg-offwhite hover:text-navy">Guarantee</a>
         <a href="#pricing" class="mobile-link px-3 py-2.5 rounded-lg text-base font-semibold text-slatebody hover:bg-offwhite hover:text-navy">Pricing</a>
-        <a href="#booking" class="mobile-link mt-1 inline-flex items-center justify-center rounded-xl bg-teal hover:bg-teal-hover text-white text-base font-bold px-5 py-3 shadow-soft">
+        <a href="#booking" class="mobile-link mt-1 inline-flex items-center justify-center rounded-xl bg-emerald hover:bg-emerald-hover text-white text-base font-bold px-5 py-3 shadow-soft">
           Book Free Consultation
         </a>
       </div>
@@ -144,15 +199,15 @@
   <section class="relative overflow-hidden bg-white hero-texture pt-36 pb-24 sm:pt-44 sm:pb-32">
     <div class="max-w-5xl mx-auto px-5 sm:px-8 text-center">
       <!-- Eyebrow -->
-      <div class="inline-flex items-center gap-2 rounded-full border border-navy-100 bg-offwhite px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-navy mb-7">
-        <span class="w-1.5 h-1.5 rounded-full bg-teal"></span>
+      <div class="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-gold-dark mb-7">
+        <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
         Elite 1-on-1 MCAT Matchmaking
       </div>
 
       <!-- Headline -->
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-navy">
+      <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-navy">
         Matched With Elite MCAT Tutors
-        <span class="block text-teal">Who've Already Conquered the Exam.</span>
+        <span class="block text-emerald">Who've Already Conquered the Exam.</span>
       </h1>
 
       <!-- Sub-headline -->
@@ -166,13 +221,13 @@
       <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
           href="#booking"
-          class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-teal hover:bg-teal-hover text-white text-base font-bold px-8 py-4 shadow-soft transition-all hover:-translate-y-0.5"
+          class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-emerald hover:bg-emerald-hover text-white text-base font-bold px-8 py-4 shadow-soft transition-all hover:-translate-y-0.5"
         >
           Book Your Free Consultation
         </a>
         <a
           href="#pricing"
-          class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl border-2 border-navy-100 text-navy hover:border-teal hover:text-teal text-base font-bold px-8 py-4 transition-all hover:-translate-y-0.5"
+          class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl border-2 border-navy-100 text-navy hover:border-emerald hover:text-emerald text-base font-bold px-8 py-4 transition-all hover:-translate-y-0.5"
         >
           View Packages
         </a>
@@ -182,81 +237,24 @@
       <div class="mt-12 flex flex-wrap items-center justify-center gap-3">
         <!-- Badge: Verified 515+ Scorers -->
         <span class="inline-flex items-center gap-2 rounded-full bg-white border border-navy-100 px-4 py-2 text-sm font-semibold text-navy shadow-soft">
-          <svg class="w-4 h-4 text-teal" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.784.57-1.838-.196-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.075 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.286-3.957z"/></svg>
+          <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.784.57-1.838-.196-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.075 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.286-3.957z"/></svg>
           Verified 515+ Scorers
         </span>
         <!-- Badge: Top 1% Tutors -->
         <span class="inline-flex items-center gap-2 rounded-full bg-white border border-navy-100 px-4 py-2 text-sm font-semibold text-navy shadow-soft">
-          <svg class="w-4 h-4 text-teal" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1.5l2.317 4.695 5.183.753-3.75 3.655.885 5.162L10 13.347l-4.635 2.438.885-5.162-3.75-3.655 5.183-.753L10 1.5z" clip-rule="evenodd"/></svg>
+          <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1.5l2.317 4.695 5.183.753-3.75 3.655.885 5.162L10 13.347l-4.635 2.438.885-5.162-3.75-3.655 5.183-.753L10 1.5z" clip-rule="evenodd"/></svg>
           Top 1% Tutors
         </span>
         <!-- Badge: 10+ Point Guarantee -->
         <span class="inline-flex items-center gap-2 rounded-full bg-white border border-navy-100 px-4 py-2 text-sm font-semibold text-navy shadow-soft">
-          <svg class="w-4 h-4 text-teal" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1.5l6.5 2.5v5c0 4.5-3 7.5-6.5 9-3.5-1.5-6.5-4.5-6.5-9v-5L10 1.5zm3.04 6.21a1 1 0 00-1.58-1.22l-2.3 2.98-1.02-1.02a1 1 0 10-1.42 1.42l1.85 1.85a1 1 0 001.5-.1l3.0-3.89z" clip-rule="evenodd"/></svg>
+          <svg class="w-4 h-4 text-emerald" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1.5l6.5 2.5v5c0 4.5-3 7.5-6.5 9-3.5-1.5-6.5-4.5-6.5-9v-5L10 1.5zm3.04 6.21a1 1 0 00-1.58-1.22l-2.3 2.98-1.02-1.02a1 1 0 10-1.42 1.42l1.85 1.85a1 1 0 001.5-.1l3.0-3.89z" clip-rule="evenodd"/></svg>
           10+ Point Guarantee
         </span>
         <!-- Badge: 100% Custom-Matched -->
         <span class="inline-flex items-center gap-2 rounded-full bg-white border border-navy-100 px-4 py-2 text-sm font-semibold text-navy shadow-soft">
-          <svg class="w-4 h-4 text-teal" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
+          <svg class="w-4 h-4 text-emerald" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
           100% Custom-Matched
         </span>
-      </div>
-    </div>
-  </section>
-
-  <!-- GUARANTEE -->
-  <section id="guarantee" class="relative overflow-hidden bg-navy-800 guarantee-texture text-white py-24">
-    <div class="max-w-5xl mx-auto px-5 sm:px-8 text-center">
-      <!-- Shield badge -->
-      <div class="mx-auto mb-8 flex items-center justify-center w-20 h-20 rounded-2xl bg-teal/15 ring-1 ring-teal/40">
-        <svg class="w-11 h-11 text-teal" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 1l7 2.7v5.4c0 4.86-3.24 8.1-7 9.9-3.76-1.8-7-5.04-7-9.9V3.7L10 1zm3.28 6.7a1 1 0 00-1.56-1.24l-2.62 3.28-1.18-1.18a1 1 0 10-1.42 1.42l2 2a1 1 0 001.5-.09l3.28-4.19z" clip-rule="evenodd"/>
-        </svg>
-      </div>
-
-      <p class="text-sm font-bold uppercase tracking-[0.2em] text-teal mb-4">The Medvance Guarantee</p>
-
-      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight">
-        10+ Point Increase —<br class="hidden sm:block" />
-        <span class="text-teal">Or Your Money Back.</span><a href="#legal" class="text-teal align-super text-2xl">*</a>
-      </h2>
-
-      <p class="mt-7 text-lg sm:text-xl leading-relaxed text-navy-50/90 max-w-3xl mx-auto">
-        We are confident in our matchmaking method because it works. When the right student
-        meets the right expert, scores move. That conviction is why we put our own revenue on
-        the line — removing the financial risk from one of the most important decisions your
-        family will make.
-      </p>
-
-      <!-- Reassurance sub-points -->
-      <div class="mt-12 grid sm:grid-cols-3 gap-6 text-left">
-        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
-          <div class="flex items-center gap-2 mb-2">
-            <svg class="w-5 h-5 text-teal" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
-            <h3 class="font-bold text-white">Risk-Free Investment</h3>
-          </div>
-          <p class="text-sm text-navy-50/80 leading-relaxed">Your tuition is protected. Meet the conditions and don't hit the gain — you don't pay.</p>
-        </div>
-        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
-          <div class="flex items-center gap-2 mb-2">
-            <svg class="w-5 h-5 text-teal" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
-            <h3 class="font-bold text-white">Accountability Built In</h3>
-          </div>
-          <p class="text-sm text-navy-50/80 leading-relaxed">Tracked diagnostics and structured homework keep both you and your tutor on target.</p>
-        </div>
-        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
-          <div class="flex items-center gap-2 mb-2">
-            <svg class="w-5 h-5 text-teal" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
-            <h3 class="font-bold text-white">We Only Win When You Win</h3>
-          </div>
-          <p class="text-sm text-navy-50/80 leading-relaxed">Our incentives are aligned with your result — your score increase is our success metric.</p>
-        </div>
-      </div>
-
-      <div class="mt-10">
-        <a href="#pricing" class="inline-flex items-center justify-center rounded-xl bg-teal hover:bg-teal-hover text-white text-base font-bold px-8 py-4 shadow-lift transition-all hover:-translate-y-0.5">
-          See Guaranteed Packages
-        </a>
       </div>
     </div>
   </section>
@@ -265,8 +263,8 @@
   <section id="features" class="bg-white py-24">
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="max-w-3xl mx-auto text-center">
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-teal mb-4">The Expert Match Advantage</p>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-emerald mb-4">The Expert Match Advantage</p>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy">
           Generic tutoring breaks plateaus by accident. We do it by design.
         </h2>
         <p class="mt-5 text-lg text-slatebody leading-relaxed">
@@ -277,48 +275,114 @@
         </p>
       </div>
 
-      <!-- Process / feature grid -->
+      <!-- Process / feature grid with custom CSS visual components -->
       <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Step 1 -->
-        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-teal">
+        <!-- Step 1: Diagnostic — custom "section weakness" bar readout -->
+        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-emerald">
           <div class="flex items-center justify-between mb-5">
-            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-offwhite text-teal group-hover:bg-teal group-hover:text-white transition-colors">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2a4 4 0 014-4h0m-7 6h.01M21 21l-3-3m1-5a5 5 0 11-10 0 5 5 0 0110 0z"/></svg>
-            </div>
-            <span class="text-sm font-extrabold text-navy-100">01</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald">Step 01</span>
+            <span class="text-sm font-extrabold text-navy-200">01</span>
           </div>
-          <h3 class="text-lg font-bold text-navy mb-2">Diagnostic & Profile</h3>
+          <!-- VISUAL: section weakness diagnostic bars -->
+          <div class="mb-6 rounded-xl bg-offwhite border border-navy-100 p-4 space-y-2.5">
+            <div class="flex items-center gap-2"><span class="w-10 text-[10px] font-bold text-slatebody">CARS</span><span class="flex-1 h-2 rounded-full bg-navy-100 overflow-hidden"><span class="block h-full rounded-full bg-gold" style="width:42%"></span></span></div>
+            <div class="flex items-center gap-2"><span class="w-10 text-[10px] font-bold text-slatebody">C/P</span><span class="flex-1 h-2 rounded-full bg-navy-100 overflow-hidden"><span class="block h-full rounded-full bg-emerald" style="width:74%"></span></span></div>
+            <div class="flex items-center gap-2"><span class="w-10 text-[10px] font-bold text-slatebody">B/B</span><span class="flex-1 h-2 rounded-full bg-navy-100 overflow-hidden"><span class="block h-full rounded-full bg-gold" style="width:55%"></span></span></div>
+            <div class="flex items-center gap-2"><span class="w-10 text-[10px] font-bold text-slatebody">P/S</span><span class="flex-1 h-2 rounded-full bg-navy-100 overflow-hidden"><span class="block h-full rounded-full bg-emerald" style="width:83%"></span></span></div>
+          </div>
+          <h3 class="text-lg font-bold text-navy mb-2">Diagnostic &amp; Profile</h3>
           <p class="text-sm text-slatebody leading-relaxed">A full diagnostic pinpoints your exact section weaknesses and target score — no guessing.</p>
         </div>
-        <!-- Step 2 -->
-        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-teal">
+
+        <!-- Step 2: Expert Match — custom matched-specialist visual -->
+        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-emerald">
           <div class="flex items-center justify-between mb-5">
-            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-offwhite text-teal group-hover:bg-teal group-hover:text-white transition-colors">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4zm6 0a3 3 0 10-3-3"/></svg>
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald">Step 02</span>
+            <span class="text-sm font-extrabold text-navy-200">02</span>
+          </div>
+          <!-- VISUAL: student linked to matched specialist -->
+          <div class="mb-6 rounded-xl bg-offwhite border border-navy-100 p-4 flex items-center justify-center gap-1.5 h-[88px]">
+            <div class="flex flex-col items-center gap-1">
+              <div class="w-11 h-11 rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center text-[11px] font-bold text-white">You</div>
+              <span class="text-[9px] font-semibold text-slatebody uppercase tracking-wide">Student</span>
             </div>
-            <span class="text-sm font-extrabold text-navy-100">02</span>
+            <div class="flex-1 flex items-center -mt-4">
+              <span class="flex-1 border-t-2 border-dashed border-navy-200"></span>
+              <span class="mx-1 inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald text-white shadow"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
+              <span class="flex-1 border-t-2 border-dashed border-navy-200"></span>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+              <div class="w-11 h-11 rounded-full bg-gradient-to-br from-emerald to-emerald-hover flex items-center justify-center text-[11px] font-bold text-white ring-2 ring-gold ring-offset-2 ring-offset-offwhite">1%</div>
+              <span class="text-[9px] font-semibold text-slatebody uppercase tracking-wide">Expert</span>
+            </div>
           </div>
           <h3 class="text-lg font-bold text-navy mb-2">Expert Match</h3>
           <p class="text-sm text-slatebody leading-relaxed">You're hand-paired with a verified specialist who scored in the top 1% on your weak sections.</p>
         </div>
-        <!-- Step 3 -->
-        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-teal">
+
+        <!-- Step 3: Targeted Plan — custom study calendar checklist -->
+        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-emerald">
           <div class="flex items-center justify-between mb-5">
-            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-offwhite text-teal group-hover:bg-teal group-hover:text-white transition-colors">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald">Step 03</span>
+            <span class="text-sm font-extrabold text-navy-200">03</span>
+          </div>
+          <!-- VISUAL: mini study calendar with completed days -->
+          <div class="mb-6 rounded-xl bg-offwhite border border-navy-100 p-4">
+            <div class="grid grid-cols-7 gap-1 mb-1.5">
+              <span class="text-center text-[8px] font-bold text-slatebody">S</span>
+              <span class="text-center text-[8px] font-bold text-slatebody">M</span>
+              <span class="text-center text-[8px] font-bold text-slatebody">T</span>
+              <span class="text-center text-[8px] font-bold text-slatebody">W</span>
+              <span class="text-center text-[8px] font-bold text-slatebody">T</span>
+              <span class="text-center text-[8px] font-bold text-slatebody">F</span>
+              <span class="text-center text-[8px] font-bold text-slatebody">S</span>
             </div>
-            <span class="text-sm font-extrabold text-navy-100">03</span>
+            <div class="grid grid-cols-7 gap-1">
+              <!-- Completed days show an emerald check; planned days are subtle dots -->
+              <span class="aspect-square rounded bg-emerald flex items-center justify-center"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
+              <span class="aspect-square rounded bg-emerald flex items-center justify-center"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
+              <span class="aspect-square rounded bg-white border border-navy-100"></span>
+              <span class="aspect-square rounded bg-emerald flex items-center justify-center"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
+              <span class="aspect-square rounded bg-white border border-navy-100"></span>
+              <span class="aspect-square rounded bg-gold/30 border border-gold/50"></span>
+              <span class="aspect-square rounded bg-white border border-navy-100"></span>
+              <span class="aspect-square rounded bg-emerald flex items-center justify-center"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
+              <span class="aspect-square rounded bg-white border border-navy-100"></span>
+              <span class="aspect-square rounded bg-emerald flex items-center justify-center"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
+              <span class="aspect-square rounded bg-white border border-navy-100"></span>
+              <span class="aspect-square rounded bg-gold/30 border border-gold/50"></span>
+              <span class="aspect-square rounded bg-white border border-navy-100"></span>
+              <span class="aspect-square rounded bg-white border border-navy-100"></span>
+            </div>
           </div>
           <h3 class="text-lg font-bold text-navy mb-2">Targeted Plan</h3>
           <p class="text-sm text-slatebody leading-relaxed">A custom study roadmap built around your gaps and timeline — never generic, recycled content.</p>
         </div>
-        <!-- Step 4 -->
-        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-teal">
+
+        <!-- Step 4: Plateau Breakthrough — custom score progression indicator -->
+        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-emerald">
           <div class="flex items-center justify-between mb-5">
-            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-offwhite text-teal group-hover:bg-teal group-hover:text-white transition-colors">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8M21 7h-4m4 0v4"/></svg>
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald">Step 04</span>
+            <span class="text-sm font-extrabold text-navy-200">04</span>
+          </div>
+          <!-- VISUAL: simulated score progression breaking the plateau -->
+          <div class="mb-6 rounded-xl bg-offwhite border border-navy-100 p-4">
+            <div class="flex items-center justify-between mb-2 text-[10px] font-bold">
+              <span class="text-slatebody">508</span>
+              <svg class="w-3 h-3 text-emerald" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 3a1 1 0 01.7.29l5 5a1 1 0 01-1.4 1.42L11 6.41V16a1 1 0 11-2 0V6.41L5.7 9.71a1 1 0 11-1.4-1.42l5-5A1 1 0 0110 3z" clip-rule="evenodd"/></svg>
+              <span class="text-emerald">519</span>
             </div>
-            <span class="text-sm font-extrabold text-navy-100">04</span>
+            <div class="relative flex items-end justify-between gap-1.5 h-[60px]">
+              <!-- dashed plateau line being broken -->
+              <span class="absolute left-0 right-0 top-[58%] border-t border-dashed border-gold/70"></span>
+              <span class="flex-1 rounded-t bg-navy-200" style="height:38%"></span>
+              <span class="flex-1 rounded-t bg-navy-200" style="height:42%"></span>
+              <span class="flex-1 rounded-t bg-navy-200" style="height:40%"></span>
+              <span class="flex-1 rounded-t bg-navy-200" style="height:44%"></span>
+              <span class="flex-1 rounded-t bg-emerald-light" style="height:66%"></span>
+              <span class="flex-1 rounded-t bg-emerald" style="height:88%"></span>
+              <span class="flex-1 rounded-t bg-emerald" style="height:100%"></span>
+            </div>
           </div>
           <h3 class="text-lg font-bold text-navy mb-2">Plateau Breakthrough</h3>
           <p class="text-sm text-slatebody leading-relaxed">Measurable, tracked score gains — guaranteed. We turn a stalled score into a competitive one.</p>
@@ -327,12 +391,165 @@
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section id="pricing" class="bg-offwhite py-24">
+  <!-- MEET OUR TOP 1% TUTORS -->
+  <section id="tutors" class="bg-offwhite py-24">
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="max-w-3xl mx-auto text-center">
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-teal mb-4">Tutoring Packages</p>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-emerald mb-4">The People Behind the Score</p>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy">
+          Meet Our Top 1% Tutors
+        </h2>
+        <p class="mt-5 text-lg text-slatebody leading-relaxed">
+          Verified high scorers from the nation's most prestigious medical programs — each hand-selected
+          for the section they teach. Real specialists, not generalists.
+        </p>
+      </div>
+
+      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+        <!-- TUTOR 1 -->
+        <div class="group rounded-2xl bg-white border border-navy-100 p-8 text-center shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+          <div class="relative mx-auto w-28 h-28">
+            <!-- TUTOR PHOTO: replace the gradient placeholder div below with <img class="w-full h-full rounded-full object-cover" src="..." alt="Dr. Sarah Chen" /> -->
+            <div class="headshot-ring absolute inset-0 rounded-full p-[3px]">
+              <div class="w-full h-full rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center text-2xl font-serif font-bold text-white">SC</div>
+            </div>
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full bg-gold text-navy-900 text-xs font-extrabold px-3 py-1 shadow-soft whitespace-nowrap">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.784.57-1.838-.196-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.075 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.286-3.957z"/></svg>
+              Score: 521
+            </span>
+          </div>
+          <h3 class="mt-7 text-xl font-bold text-navy">Dr. Sarah Chen</h3>
+          <p class="mt-1 text-sm font-semibold text-gold-dark">Harvard Medical School</p>
+          <span class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-emerald/10 text-emerald text-xs font-bold uppercase tracking-wide px-3 py-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald"></span>
+            Bio / Biochem Specialist
+          </span>
+        </div>
+
+        <!-- TUTOR 2 -->
+        <div class="group rounded-2xl bg-white border border-navy-100 p-8 text-center shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+          <div class="relative mx-auto w-28 h-28">
+            <!-- TUTOR PHOTO: replace the gradient placeholder div below with <img class="w-full h-full rounded-full object-cover" src="..." alt="Dr. Marcus Reed" /> -->
+            <div class="headshot-ring absolute inset-0 rounded-full p-[3px]">
+              <div class="w-full h-full rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center text-2xl font-serif font-bold text-white">MR</div>
+            </div>
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full bg-gold text-navy-900 text-xs font-extrabold px-3 py-1 shadow-soft whitespace-nowrap">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.784.57-1.838-.196-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.075 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.286-3.957z"/></svg>
+              Score: 523
+            </span>
+          </div>
+          <h3 class="mt-7 text-xl font-bold text-navy">Dr. Marcus Reed</h3>
+          <p class="mt-1 text-sm font-semibold text-gold-dark">Johns Hopkins School of Medicine</p>
+          <span class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-emerald/10 text-emerald text-xs font-bold uppercase tracking-wide px-3 py-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald"></span>
+            Chem / Phys Specialist
+          </span>
+        </div>
+
+        <!-- TUTOR 3 -->
+        <div class="group rounded-2xl bg-white border border-navy-100 p-8 text-center shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+          <div class="relative mx-auto w-28 h-28">
+            <!-- TUTOR PHOTO: replace the gradient placeholder div below with <img class="w-full h-full rounded-full object-cover" src="..." alt="Dr. Priya Nair" /> -->
+            <div class="headshot-ring absolute inset-0 rounded-full p-[3px]">
+              <div class="w-full h-full rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center text-2xl font-serif font-bold text-white">PN</div>
+            </div>
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full bg-gold text-navy-900 text-xs font-extrabold px-3 py-1 shadow-soft whitespace-nowrap">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.784.57-1.838-.196-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.075 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.286-3.957z"/></svg>
+              Score: 520
+            </span>
+          </div>
+          <h3 class="mt-7 text-xl font-bold text-navy">Dr. Priya Nair</h3>
+          <p class="mt-1 text-sm font-semibold text-gold-dark">Stanford University School of Medicine</p>
+          <span class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-emerald/10 text-emerald text-xs font-bold uppercase tracking-wide px-3 py-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald"></span>
+            CARS &amp; Psych / Soc
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section id="guarantee" class="relative overflow-hidden guarantee-depth text-white py-24">
+    <!-- fine micro-grid pattern overlay -->
+    <div class="micro-grid absolute inset-0 pointer-events-none"></div>
+
+    <div class="relative max-w-5xl mx-auto px-5 sm:px-8">
+      <!-- CERTIFICATE FRAME -->
+      <div class="certificate relative rounded-2xl px-6 sm:px-12 py-14 text-center">
+        <span class="cert-corner tl"></span>
+        <span class="cert-corner tr"></span>
+        <span class="cert-corner bl"></span>
+        <span class="cert-corner br"></span>
+
+        <!-- Shield seal -->
+        <div class="mx-auto mb-7 flex items-center justify-center w-20 h-20 rounded-full bg-navy-900 ring-2 ring-gold/60 shadow-lift">
+          <svg class="w-10 h-10 text-gold" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 1l7 2.7v5.4c0 4.86-3.24 8.1-7 9.9-3.76-1.8-7-5.04-7-9.9V3.7L10 1zm3.28 6.7a1 1 0 00-1.56-1.24l-2.62 3.28-1.18-1.18a1 1 0 10-1.42 1.42l2 2a1 1 0 001.5-.09l3.28-4.19z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+
+        <p class="text-xs font-bold uppercase tracking-[0.32em] text-gold mb-5">The Medvance Guarantee</p>
+
+        <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight">
+          10+ Point Increase —<br class="hidden sm:block" />
+          <span class="text-gold">Or Your Money Back.</span><a href="#legal" class="text-gold align-super text-2xl">*</a>
+        </h2>
+
+        <!-- gold rule -->
+        <div class="mx-auto my-7 flex items-center justify-center gap-3">
+          <span class="h-px w-16 bg-gradient-to-r from-transparent to-gold/70"></span>
+          <span class="w-1.5 h-1.5 rotate-45 bg-gold"></span>
+          <span class="h-px w-16 bg-gradient-to-l from-transparent to-gold/70"></span>
+        </div>
+
+        <p class="text-lg sm:text-xl leading-relaxed text-navy-100 max-w-3xl mx-auto">
+          We are confident in our matchmaking method because it works. When the right student
+          meets the right expert, scores move. That conviction is why we put our own revenue on
+          the line — removing the financial risk from one of the most important decisions your
+          family will make.
+        </p>
+      </div>
+
+      <!-- Reassurance sub-points -->
+      <div class="mt-10 grid sm:grid-cols-3 gap-6 text-left">
+        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
+            <h3 class="font-bold text-white">Risk-Free Investment</h3>
+          </div>
+          <p class="text-sm text-navy-100/80 leading-relaxed">Your tuition is protected. Meet the conditions and don't hit the gain — you don't pay.</p>
+        </div>
+        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
+            <h3 class="font-bold text-white">Accountability Built In</h3>
+          </div>
+          <p class="text-sm text-navy-100/80 leading-relaxed">Tracked diagnostics and structured homework keep both you and your tutor on target.</p>
+        </div>
+        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
+            <h3 class="font-bold text-white">We Only Win When You Win</h3>
+          </div>
+          <p class="text-sm text-navy-100/80 leading-relaxed">Our incentives are aligned with your result — your score increase is our success metric.</p>
+        </div>
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="#pricing" class="inline-flex items-center justify-center rounded-xl bg-emerald hover:bg-emerald-hover text-white text-base font-bold px-8 py-4 shadow-lift transition-all hover:-translate-y-0.5">
+          See Guaranteed Packages
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="bg-white py-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-emerald mb-4">Tutoring Packages</p>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy">
           Choose the path to your score.
         </h2>
         <p class="mt-5 text-lg text-slatebody leading-relaxed">
@@ -352,10 +569,10 @@
             <span class="text-sm font-medium text-slatebody">/ package</span>
           </div>
           <ul class="mt-7 space-y-3.5 text-sm text-slatebody">
-            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg><span><span class="font-semibold text-navy">5 hours</span> of 1-on-1 expert time</span></li>
-            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Single-section custom study plan</li>
-            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Homework review & feedback</li>
-            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg><span class="font-semibold text-navy">Backed by our 10+ Point Guarantee</span></li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-emerald shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg><span><span class="font-semibold text-navy">5 hours</span> of 1-on-1 expert time</span></li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-emerald shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Single-section custom study plan</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-emerald shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Homework review &amp; feedback</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-emerald shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg><span class="font-semibold text-navy">Backed by our 10+ Point Guarantee</span></li>
           </ul>
           <!-- STRIPE: Replace href="#" with your Stripe Payment Link for the 5-Hour tier -->
           <a href="#" class="mt-8 inline-flex w-full items-center justify-center rounded-xl border-2 border-navy text-navy hover:bg-navy hover:text-white text-base font-bold px-6 py-3.5 transition-all">
@@ -364,27 +581,27 @@
         </div>
 
         <!-- TIER 2: 10-Hour Score Breakthrough (MOST POPULAR) -->
-        <div class="relative rounded-2xl bg-navy-800 text-white border-2 border-teal p-8 shadow-lift transition-all duration-300 hover:-translate-y-1.5 lg:scale-[1.04]">
-          <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full bg-teal px-4 py-1.5 text-xs font-extrabold uppercase tracking-wider text-white shadow-soft">
+        <div class="relative rounded-2xl bg-navy-800 text-white border-2 border-gold p-8 shadow-lift transition-all duration-300 hover:-translate-y-1.5 lg:scale-[1.04]">
+          <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full bg-gold px-4 py-1.5 text-xs font-extrabold uppercase tracking-wider text-navy-900 shadow-soft">
             <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.784.57-1.838-.196-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.075 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.286-3.957z"/></svg>
             Most Popular
           </span>
           <h3 class="text-xl font-bold text-white">10-Hour Score Breakthrough</h3>
-          <p class="mt-2 text-sm text-navy-50/80 leading-relaxed">The comprehensive plateau-breaker — our most chosen path to a 10+ point lift.</p>
+          <p class="mt-2 text-sm text-navy-100/80 leading-relaxed">The comprehensive plateau-breaker — our most chosen path to a 10+ point lift.</p>
           <div class="mt-6 flex items-baseline gap-1">
             <!-- PRICE: edit this value for the 10-Hour tier -->
             <span class="text-4xl font-extrabold text-white">$X,XXX</span>
-            <span class="text-sm font-medium text-navy-50/70">/ package</span>
+            <span class="text-sm font-medium text-navy-100/70">/ package</span>
           </div>
-          <ul class="mt-7 space-y-3.5 text-sm text-navy-50/90">
-            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg><span><span class="font-semibold text-white">10 hours</span> of 1-on-1 expert time</span></li>
-            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Multi-section custom study plan</li>
-            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Full diagnostic analysis</li>
-            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Homework review & progress tracking</li>
-            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg><span class="font-semibold text-white">Backed by our 10+ Point Guarantee</span></li>
+          <ul class="mt-7 space-y-3.5 text-sm text-navy-100/90">
+            <li class="flex gap-3"><svg class="w-5 h-5 text-gold shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg><span><span class="font-semibold text-white">10 hours</span> of 1-on-1 expert time</span></li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-gold shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Multi-section custom study plan</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-gold shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Full diagnostic analysis</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-gold shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Homework review &amp; progress tracking</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-gold shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg><span class="font-semibold text-white">Backed by our 10+ Point Guarantee</span></li>
           </ul>
           <!-- STRIPE: Replace href="#" with your Stripe Payment Link for the 10-Hour tier -->
-          <a href="#" class="mt-8 inline-flex w-full items-center justify-center rounded-xl bg-teal hover:bg-teal-hover text-white text-base font-bold px-6 py-3.5 shadow-soft transition-all">
+          <a href="#" class="mt-8 inline-flex w-full items-center justify-center rounded-xl bg-emerald hover:bg-emerald-hover text-white text-base font-bold px-6 py-3.5 shadow-soft transition-all">
             Enroll Now
           </a>
         </div>
@@ -399,12 +616,12 @@
             <span class="text-sm font-medium text-slatebody">/ package</span>
           </div>
           <ul class="mt-7 space-y-3.5 text-sm text-slatebody">
-            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg><span><span class="font-semibold text-navy">20 hours</span> of 1-on-1 expert time</span></li>
-            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Full multi-tutor expert matching</li>
-            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>End-to-end custom study roadmap</li>
-            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Homework review & progress tracking</li>
-            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Priority scheduling</li>
-            <li class="flex gap-3"><svg class="w-5 h-5 text-teal shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg><span class="font-semibold text-navy">Backed by our 10+ Point Guarantee</span></li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-emerald shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg><span><span class="font-semibold text-navy">20 hours</span> of 1-on-1 expert time</span></li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-emerald shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Full multi-tutor expert matching</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-emerald shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>End-to-end custom study roadmap</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-emerald shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Homework review &amp; progress tracking</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-emerald shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>Priority scheduling</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-emerald shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg><span class="font-semibold text-navy">Backed by our 10+ Point Guarantee</span></li>
           </ul>
           <!-- STRIPE: Replace href="#" with your Stripe Payment Link for the 20-Hour tier -->
           <a href="#" class="mt-8 inline-flex w-full items-center justify-center rounded-xl border-2 border-navy text-navy hover:bg-navy hover:text-white text-base font-bold px-6 py-3.5 transition-all">
@@ -416,10 +633,10 @@
   </section>
 
   <!-- BOOKING / CALENDLY -->
-  <section id="booking" class="bg-white py-24">
+  <section id="booking" class="bg-offwhite py-24">
     <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center">
-      <p class="text-sm font-bold uppercase tracking-[0.2em] text-teal mb-4">Free Consultation</p>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy">
+      <p class="text-sm font-bold uppercase tracking-[0.2em] text-emerald mb-4">Free Consultation</p>
+      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy">
         Book Your Free Strategy Consultation
       </h2>
       <p class="mt-5 text-lg text-slatebody leading-relaxed max-w-2xl mx-auto">
@@ -444,11 +661,11 @@
       <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
         <!-- Brand -->
         <div class="max-w-sm">
-          <a href="#top" class="flex items-center gap-1.5 font-extrabold text-xl tracking-tight text-white">
+          <a href="#top" class="flex items-center gap-1.5 font-serif font-extrabold text-xl tracking-tight text-white">
             Medvance Prep
-            <span class="inline-block w-2 h-2 rounded-full bg-teal mt-2"></span>
+            <span class="inline-block w-2 h-2 rounded-full bg-gold mt-2"></span>
           </a>
-          <p class="mt-4 text-sm text-navy-50/70 leading-relaxed">
+          <p class="mt-4 text-sm text-navy-100/70 leading-relaxed">
             Elite MCAT matchmaking. We pair driven pre-med students with top 1% tutors to break
             score plateaus and build competitive applications.
           </p>
@@ -456,19 +673,20 @@
 
         <!-- Quick links -->
         <nav class="flex flex-col gap-3 text-sm">
-          <span class="font-bold uppercase tracking-wider text-navy-50/50 text-xs mb-1">Explore</span>
-          <a href="#features" class="text-navy-50/80 hover:text-teal transition-colors">The Advantage</a>
-          <a href="#guarantee" class="text-navy-50/80 hover:text-teal transition-colors">Guarantee</a>
-          <a href="#pricing" class="text-navy-50/80 hover:text-teal transition-colors">Pricing</a>
-          <a href="#booking" class="text-navy-50/80 hover:text-teal transition-colors">Book a Consultation</a>
+          <span class="font-bold uppercase tracking-wider text-navy-100/50 text-xs mb-1">Explore</span>
+          <a href="#features" class="text-navy-100/80 hover:text-gold transition-colors">The Advantage</a>
+          <a href="#tutors" class="text-navy-100/80 hover:text-gold transition-colors">Our Tutors</a>
+          <a href="#guarantee" class="text-navy-100/80 hover:text-gold transition-colors">Guarantee</a>
+          <a href="#pricing" class="text-navy-100/80 hover:text-gold transition-colors">Pricing</a>
+          <a href="#booking" class="text-navy-100/80 hover:text-gold transition-colors">Book a Consultation</a>
         </nav>
       </div>
 
       <hr class="my-10 border-white/10" />
 
       <!-- Legal footnote -->
-      <div id="legal" class="text-xs text-navy-50/60 leading-relaxed max-w-4xl">
-        <p class="font-semibold text-navy-50/80 mb-1">* Terms &amp; Conditions Apply — 10+ Point Guarantee</p>
+      <div id="legal" class="text-xs text-navy-100/60 leading-relaxed max-w-4xl">
+        <p class="font-semibold text-navy-100/80 mb-1">* Terms &amp; Conditions Apply — 10+ Point Guarantee</p>
         <p>
           The 10+ point increase guarantee requires 100% session attendance and completion of all
           assigned diagnostic exams and homework. The guarantee applies only to enrolled students
@@ -479,7 +697,7 @@
         </p>
       </div>
 
-      <p class="mt-8 text-xs text-navy-50/50">
+      <p class="mt-8 text-xs text-navy-100/50">
         &copy; <span id="year"></span> Medvance Prep. All rights reserved.
       </p>
     </div>
