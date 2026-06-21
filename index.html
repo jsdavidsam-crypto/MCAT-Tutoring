@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Medvance Prep — Elite MCAT Tutoring, Matched to You</title>
+  <title>Medvance Prep — Custom MCAT Blueprints, Matched to Top 1% Tutors</title>
   <meta
     name="description"
-    content="Medvance Prep pairs you 1-on-1 with a top 1% MCAT scorer matched to your exact weaknesses, backed by a 10+ point guarantee. Less stress, more score."
+    content="Medvance Prep builds a custom MCAT blueprint matched to a top 1% tutor — a tailored path to your individual target score, guaranteed."
   />
 
-  <!-- FONTS: Inter (body) + Playfair Display (prestige headings) via Google Fonts -->
+  <!-- FONTS: Inter (body) + Playfair Display (prestige serif headings) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -29,30 +29,24 @@
       theme: {
         extend: {
           colors: {
-            // Deep, authoritative navy — primary
+            // Deep, authoritative medical navy — heavy containers + text accents
             navy: {
-              DEFAULT: "#0A1F44",
-              50: "#EEF2F8",
-              100: "#D6DEEC",
-              200: "#A9B8D4",
-              700: "#13306B",
-              800: "#0A1F44",
-              900: "#06142E",
+              DEFAULT: "#0B192C",
+              50: "#EDF1F6",
+              100: "#D3DCE8",
+              200: "#A4B4CB",
+              700: "#13294A",
+              800: "#0B192C",
+              900: "#060F1C",
             },
-            // Rich emerald — primary buttons, checks, CTAs
-            emerald: {
-              DEFAULT: "#047857",
-              light: "#059669",
-              hover: "#065F46",
-              50: "#ECFDF5",
-            },
-            // Sophisticated gold — prestige accents (certificate, score badges, seals)
+            // Sophisticated metallic champagne gold — tags, borders, badges
             gold: {
-              DEFAULT: "#C8A45C",
-              light: "#E4CD92",
-              dark: "#9C7C32",
+              DEFAULT: "#C5A880", // champagne fills / borders / badges
+              light: "#E3D2AE",
+              deep: "#A07C2E",    // accent icons / eyebrows on white (graphical)
+              dark: "#7A5E24",    // small text on white (readable)
             },
-            offwhite: "#F8FAFC",
+            offwhite: "#F8F6F1",
             slatebody: "#475569",
           },
           fontFamily: {
@@ -60,8 +54,8 @@
             serif: ["Playfair Display", "ui-serif", "Georgia", "serif"],
           },
           boxShadow: {
-            soft: "0 10px 30px -12px rgba(10, 31, 68, 0.15)",
-            lift: "0 24px 50px -16px rgba(10, 31, 68, 0.28)",
+            soft: "0 10px 30px -12px rgba(11, 25, 44, 0.16)",
+            lift: "0 24px 50px -16px rgba(11, 25, 44, 0.30)",
           },
         },
       },
@@ -70,78 +64,71 @@
 
   <!-- CUSTOM STYLES -->
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
-    }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Inter", ui-sans-serif, system-ui, sans-serif; }
+
     /* Account for sticky navbar height when jumping to anchors */
-    section[id],
-    div[id="booking"] {
-      scroll-margin-top: 88px;
-    }
+    section[id] { scroll-margin-top: 88px; }
 
     /* Subtle hero wash */
     .hero-texture {
       background-image:
-        radial-gradient(circle at 15% 15%, rgba(4, 120, 87, 0.07), transparent 42%),
-        radial-gradient(circle at 88% 0%, rgba(200, 164, 92, 0.10), transparent 45%);
+        radial-gradient(circle at 12% 18%, rgba(197, 168, 128, 0.14), transparent 42%),
+        radial-gradient(circle at 88% 0%, rgba(11, 25, 44, 0.05), transparent 45%);
     }
 
     /* GUARANTEE: depth gradient + fine micro-grid pattern */
     .guarantee-depth {
-      background-color: #0A1F44;
+      background-color: #0B192C;
       background-image:
-        radial-gradient(circle at 50% -10%, rgba(200, 164, 92, 0.16), transparent 55%),
-        radial-gradient(circle at 8% 110%, rgba(4, 120, 87, 0.22), transparent 48%),
-        linear-gradient(180deg, #0A1F44 0%, #06142E 100%);
+        radial-gradient(circle at 50% -10%, rgba(197, 168, 128, 0.20), transparent 55%),
+        radial-gradient(circle at 8% 110%, rgba(197, 168, 128, 0.10), transparent 48%),
+        linear-gradient(180deg, #0B192C 0%, #060F1C 100%);
     }
     .micro-grid {
       background-image:
-        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
       background-size: 30px 30px;
       -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 55%, transparent 100%);
       mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 55%, transparent 100%);
     }
 
-    /* CERTIFICATE frame for the guarantee headline box */
+    /* CERTIFICATE frame for the guarantee container */
     .certificate {
-      border: 2px solid rgba(200, 164, 92, 0.6);
+      border: 2px solid rgba(197, 168, 128, 0.62);
       box-shadow:
-        inset 0 0 0 1px rgba(200, 164, 92, 0.28),
+        inset 0 0 0 1px rgba(197, 168, 128, 0.30),
         0 30px 60px -25px rgba(0, 0, 0, 0.55);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
     }
-    /* Certificate corner flourishes */
     .cert-corner {
-      position: absolute;
-      width: 22px;
-      height: 22px;
-      border-color: #C8A45C;
-      border-style: solid;
-      border-width: 0;
+      position: absolute; width: 22px; height: 22px;
+      border-color: #C5A880; border-style: solid; border-width: 0;
     }
     .cert-corner.tl { top: 12px; left: 12px; border-top-width: 2px; border-left-width: 2px; }
     .cert-corner.tr { top: 12px; right: 12px; border-top-width: 2px; border-right-width: 2px; }
     .cert-corner.bl { bottom: 12px; left: 12px; border-bottom-width: 2px; border-left-width: 2px; }
     .cert-corner.br { bottom: 12px; right: 12px; border-bottom-width: 2px; border-right-width: 2px; }
 
-    /* Tutor headshot gold ring */
-    .headshot-ring {
-      background: conic-gradient(from 180deg, #E4CD92, #C8A45C, #9C7C32, #C8A45C, #E4CD92);
+    /* Headshot / score-bubble gold ring */
+    .gold-ring {
+      background: conic-gradient(from 180deg, #E3D2AE, #C5A880, #A07C2E, #C5A880, #E3D2AE);
     }
 
-    /* Blueprint grid backdrop for the Custom Score Roadmap component */
+    /* Blueprint grid backdrop */
     .blueprint {
-      background-color: #F8FAFC;
+      background-color: #F8F6F1;
       background-image:
-        linear-gradient(rgba(10, 31, 68, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(10, 31, 68, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(11, 25, 44, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(11, 25, 44, 0.05) 1px, transparent 1px);
       background-size: 26px 26px;
     }
+
+    /* Slow spin for the Crest of Excellence curved text */
+    @keyframes crest-spin { to { transform: rotate(360deg); } }
+    .crest-spin { animation: crest-spin 28s linear infinite; transform-origin: 50% 50%; }
+    @media (prefers-reduced-motion: reduce) { .crest-spin { animation: none; } }
   </style>
 </head>
 
@@ -149,10 +136,9 @@
   <!-- NAVBAR -->
   <header
     id="navbar"
-    class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-transparent"
+    class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white/85 backdrop-blur-md border-b border-transparent"
   >
     <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
-      <!-- Wordmark -->
       <a href="#top" class="flex items-center gap-1.5 font-serif font-extrabold text-xl tracking-tight text-navy">
         Medvance Prep
         <span class="inline-block w-2 h-2 rounded-full bg-gold mt-2"></span>
@@ -160,15 +146,15 @@
 
       <!-- Desktop links -->
       <div class="hidden md:flex items-center gap-7">
-        <a href="#features" class="text-sm font-semibold text-slatebody hover:text-navy transition-colors">The Advantage</a>
+        <a href="#features" class="text-sm font-semibold text-slatebody hover:text-navy transition-colors">Why Custom?</a>
         <a href="#tutors" class="text-sm font-semibold text-slatebody hover:text-navy transition-colors">Our Tutors</a>
-        <a href="#guarantee" class="text-sm font-semibold text-slatebody hover:text-navy transition-colors">Guarantee</a>
-        <a href="#pricing" class="text-sm font-semibold text-slatebody hover:text-navy transition-colors">Your Roadmap</a>
+        <a href="#blueprint" class="text-sm font-semibold text-slatebody hover:text-navy transition-colors">The Blueprint</a>
+        <a href="#results" class="text-sm font-semibold text-slatebody hover:text-navy transition-colors">Results</a>
         <a
           href="#booking"
-          class="inline-flex items-center justify-center rounded-xl bg-emerald hover:bg-emerald-hover text-white text-sm font-bold px-5 py-2.5 shadow-soft transition-all hover:-translate-y-0.5"
+          class="inline-flex items-center justify-center rounded-xl bg-navy-800 hover:bg-navy-900 text-white text-xs font-bold uppercase tracking-wider px-5 py-3 shadow-soft ring-1 ring-gold/40 transition-all hover:-translate-y-0.5"
         >
-          Request Your Roadmap
+          Book Your Strategy Consultation
         </a>
       </div>
 
@@ -191,12 +177,12 @@
     <!-- Mobile dropdown panel -->
     <div id="mobile-menu" class="md:hidden hidden border-t border-navy-50 bg-white/95 backdrop-blur-md">
       <div class="px-5 py-4 flex flex-col gap-2">
-        <a href="#features" class="mobile-link px-3 py-2.5 rounded-lg text-base font-semibold text-slatebody hover:bg-offwhite hover:text-navy">The Advantage</a>
+        <a href="#features" class="mobile-link px-3 py-2.5 rounded-lg text-base font-semibold text-slatebody hover:bg-offwhite hover:text-navy">Why Custom?</a>
         <a href="#tutors" class="mobile-link px-3 py-2.5 rounded-lg text-base font-semibold text-slatebody hover:bg-offwhite hover:text-navy">Our Tutors</a>
-        <a href="#guarantee" class="mobile-link px-3 py-2.5 rounded-lg text-base font-semibold text-slatebody hover:bg-offwhite hover:text-navy">Guarantee</a>
-        <a href="#pricing" class="mobile-link px-3 py-2.5 rounded-lg text-base font-semibold text-slatebody hover:bg-offwhite hover:text-navy">Your Roadmap</a>
-        <a href="#booking" class="mobile-link mt-1 inline-flex items-center justify-center rounded-xl bg-emerald hover:bg-emerald-hover text-white text-base font-bold px-5 py-3 shadow-soft">
-          Request Your Roadmap
+        <a href="#blueprint" class="mobile-link px-3 py-2.5 rounded-lg text-base font-semibold text-slatebody hover:bg-offwhite hover:text-navy">The Blueprint</a>
+        <a href="#results" class="mobile-link px-3 py-2.5 rounded-lg text-base font-semibold text-slatebody hover:bg-offwhite hover:text-navy">Results</a>
+        <a href="#booking" class="mobile-link mt-1 inline-flex items-center justify-center rounded-xl bg-navy-800 hover:bg-navy-900 text-white text-sm font-bold uppercase tracking-wider px-5 py-3 shadow-soft ring-1 ring-gold/40">
+          Book Your Strategy Consultation
         </a>
       </div>
     </div>
@@ -205,137 +191,224 @@
   <span id="top"></span>
 
   <!-- HERO -->
-  <section class="relative overflow-hidden bg-white hero-texture pt-36 pb-24 sm:pt-44 sm:pb-32">
+  <section class="relative overflow-hidden bg-white hero-texture pt-36 pb-24 sm:pt-44 sm:pb-28">
     <div class="max-w-5xl mx-auto px-5 sm:px-8 text-center">
-      <!-- Eyebrow -->
-      <div class="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-gold-dark mb-7">
+      <!-- Gold accent tag -->
+      <div class="inline-flex items-center gap-2 rounded-full border border-gold/45 bg-gold/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-gold-dark mb-7">
         <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
         Elite 1-on-1 MCAT Matchmaking
       </div>
 
       <!-- Headline -->
       <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-navy">
-        Matched With Elite MCAT Tutors
-        <span class="block text-emerald">Who've Already Conquered the Exam.</span>
+        Custom MCAT Blueprints Matched With Top 1% Tutors.
+        <span class="block mt-3 text-3xl sm:text-4xl lg:text-5xl text-gold-dark">A Tailored Path to Your Target Score, Guaranteed.</span>
       </h1>
 
       <!-- Sub-headline -->
-      <p class="mt-6 text-lg sm:text-xl leading-relaxed text-slatebody max-w-3xl mx-auto">
-        We pair you 1-on-1 with a top 1% scorer matched to your exact weaknesses —
-        backed by a <span class="font-semibold text-navy">10+ point guarantee</span>.
-        Less stress, more score, and a clear path to a competitive application.
+      <p class="mt-7 text-lg sm:text-xl leading-relaxed text-slatebody max-w-3xl mx-auto">
+        We don't sell hourly blocks. We calculate your individual target score from your diagnostic
+        baseline, timeline, and goals — match you to a verified top 1% specialist — and commit to
+        getting you there.
       </p>
 
       <!-- CTAs -->
       <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
           href="#booking"
-          class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-emerald hover:bg-emerald-hover text-white text-base font-bold px-8 py-4 shadow-soft transition-all hover:-translate-y-0.5"
+          class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-navy-800 hover:bg-navy-900 text-white text-base font-bold px-8 py-4 shadow-soft ring-1 ring-gold/40 transition-all hover:-translate-y-0.5"
         >
-          Request Your Personalized Roadmap
+          Request Your Target Score Assessment
         </a>
         <a
-          href="#pricing"
-          class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl border-2 border-navy-100 text-navy hover:border-emerald hover:text-emerald text-base font-bold px-8 py-4 transition-all hover:-translate-y-0.5"
+          href="#features"
+          class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl border-2 border-navy-100 text-navy hover:border-gold hover:text-gold-dark text-base font-bold px-8 py-4 transition-all hover:-translate-y-0.5"
         >
-          See Your Custom Roadmap
+          Learn Our Bespoke Method
         </a>
       </div>
 
       <!-- Trust badges -->
       <div class="mt-12 flex flex-wrap items-center justify-center gap-3">
-        <!-- Badge: Verified 515+ Scorers -->
         <span class="inline-flex items-center gap-2 rounded-full bg-white border border-navy-100 px-4 py-2 text-sm font-semibold text-navy shadow-soft">
-          <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.784.57-1.838-.196-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.075 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.286-3.957z"/></svg>
+          <svg class="w-4 h-4 text-gold-deep" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.784.57-1.838-.196-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.075 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.286-3.957z"/></svg>
           Verified 515+ Scorers
         </span>
-        <!-- Badge: Top 1% Tutors -->
         <span class="inline-flex items-center gap-2 rounded-full bg-white border border-navy-100 px-4 py-2 text-sm font-semibold text-navy shadow-soft">
-          <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1.5l2.317 4.695 5.183.753-3.75 3.655.885 5.162L10 13.347l-4.635 2.438.885-5.162-3.75-3.655 5.183-.753L10 1.5z" clip-rule="evenodd"/></svg>
+          <svg class="w-4 h-4 text-gold-deep" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1.5l2.317 4.695 5.183.753-3.75 3.655.885 5.162L10 13.347l-4.635 2.438.885-5.162-3.75-3.655 5.183-.753L10 1.5z" clip-rule="evenodd"/></svg>
           Top 1% Tutors
         </span>
-        <!-- Badge: 10+ Point Guarantee -->
         <span class="inline-flex items-center gap-2 rounded-full bg-white border border-navy-100 px-4 py-2 text-sm font-semibold text-navy shadow-soft">
-          <svg class="w-4 h-4 text-emerald" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1.5l6.5 2.5v5c0 4.5-3 7.5-6.5 9-3.5-1.5-6.5-4.5-6.5-9v-5L10 1.5zm3.04 6.21a1 1 0 00-1.58-1.22l-2.3 2.98-1.02-1.02a1 1 0 10-1.42 1.42l1.85 1.85a1 1 0 001.5-.1l3.0-3.89z" clip-rule="evenodd"/></svg>
-          10+ Point Guarantee
+          <svg class="w-4 h-4 text-gold-deep" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1.5l6.5 2.5v5c0 4.5-3 7.5-6.5 9-3.5-1.5-6.5-4.5-6.5-9v-5L10 1.5zm3.04 6.21a1 1 0 00-1.58-1.22l-2.3 2.98-1.02-1.02a1 1 0 10-1.42 1.42l1.85 1.85a1 1 0 001.5-.1l3.0-3.89z" clip-rule="evenodd"/></svg>
+          Bespoke Target Score Guarantee
         </span>
-        <!-- Badge: 100% Custom-Matched -->
         <span class="inline-flex items-center gap-2 rounded-full bg-white border border-navy-100 px-4 py-2 text-sm font-semibold text-navy shadow-soft">
-          <svg class="w-4 h-4 text-emerald" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
+          <svg class="w-4 h-4 text-gold-deep" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
           100% Custom-Matched
         </span>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES / EXPERT MATCH ADVANTAGE -->
-  <section id="features" class="bg-white py-24">
+  <!-- MEET OUR TOP 1% MENTORS (below hero) -->
+  <section id="tutors" class="bg-offwhite py-24">
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="max-w-3xl mx-auto text-center">
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-emerald mb-4">The Expert Match Advantage</p>
+        <span class="inline-flex items-center gap-2 rounded-full bg-gold/10 border border-gold/40 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-gold-dark mb-5">The People Behind the Score</span>
         <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy">
-          Generic tutoring breaks plateaus by accident. We do it by design.
+          Meet Our Top 1% Mentors
         </h2>
         <p class="mt-5 text-lg text-slatebody leading-relaxed">
-          You're not assigned the next available tutor. You're hand-matched to a verified top 1%
-          specialist for your exact weak sections —
-          <span class="font-semibold text-navy">CARS, Chem/Phys, Bio/Biochem, and Psych/Soc</span> —
-          so every hour is spent where it moves your score.
+          Verified high scorers from the nation's most prestigious medical programs — each hand-selected
+          for the section they teach. Real specialists, not generalists.
         </p>
       </div>
 
-      <!-- Process / feature grid with custom CSS visual components -->
-      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Step 1: Diagnostic — custom "section weakness" bar readout -->
-        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-emerald">
+      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-7">
+        <!-- MENTOR 1 -->
+        <div class="group rounded-2xl bg-white border border-navy-100 p-7 text-center shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+          <div class="relative mx-auto w-24 h-24">
+            <!-- MENTOR PHOTO: replace the gradient placeholder below with <img class="w-full h-full rounded-full object-cover" src="..." alt="Dr. Elena Brooks" /> -->
+            <div class="gold-ring absolute inset-0 rounded-full p-[3px]">
+              <div class="w-full h-full rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center text-xl font-serif font-bold text-white">EB</div>
+            </div>
+            <!-- Large colored score bubble -->
+            <span class="absolute -bottom-3 -right-2 flex flex-col items-center justify-center w-12 h-12 rounded-full bg-navy-900 border-2 border-gold text-gold font-extrabold text-base leading-none shadow-soft">524</span>
+          </div>
+          <h3 class="mt-7 text-lg font-bold text-navy">Dr. Elena Brooks</h3>
+          <p class="mt-1 text-sm font-semibold text-gold-dark">Columbia Med</p>
+          <span class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-navy-50 text-navy text-xs font-bold uppercase tracking-wide px-3 py-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-gold"></span> CARS Specialist
+          </span>
+        </div>
+
+        <!-- MENTOR 2 -->
+        <div class="group rounded-2xl bg-white border border-navy-100 p-7 text-center shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+          <div class="relative mx-auto w-24 h-24">
+            <!-- MENTOR PHOTO: replace the gradient placeholder below with <img class="w-full h-full rounded-full object-cover" src="..." alt="Dr. Marcus Reed" /> -->
+            <div class="gold-ring absolute inset-0 rounded-full p-[3px]">
+              <div class="w-full h-full rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center text-xl font-serif font-bold text-white">MR</div>
+            </div>
+            <span class="absolute -bottom-3 -right-2 flex flex-col items-center justify-center w-12 h-12 rounded-full bg-navy-900 border-2 border-gold text-gold font-extrabold text-base leading-none shadow-soft">521</span>
+          </div>
+          <h3 class="mt-7 text-lg font-bold text-navy">Dr. Marcus Reed</h3>
+          <p class="mt-1 text-sm font-semibold text-gold-dark">Johns Hopkins Med</p>
+          <span class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-navy-50 text-navy text-xs font-bold uppercase tracking-wide px-3 py-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-gold"></span> Chem/Phys Specialist
+          </span>
+        </div>
+
+        <!-- MENTOR 3 -->
+        <div class="group rounded-2xl bg-white border border-navy-100 p-7 text-center shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+          <div class="relative mx-auto w-24 h-24">
+            <!-- MENTOR PHOTO: replace the gradient placeholder below with <img class="w-full h-full rounded-full object-cover" src="..." alt="Dr. Priya Nair" /> -->
+            <div class="gold-ring absolute inset-0 rounded-full p-[3px]">
+              <div class="w-full h-full rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center text-xl font-serif font-bold text-white">PN</div>
+            </div>
+            <span class="absolute -bottom-3 -right-2 flex flex-col items-center justify-center w-12 h-12 rounded-full bg-navy-900 border-2 border-gold text-gold font-extrabold text-base leading-none shadow-soft">520</span>
+          </div>
+          <h3 class="mt-7 text-lg font-bold text-navy">Dr. Priya Nair</h3>
+          <p class="mt-1 text-sm font-semibold text-gold-dark">Stanford Med</p>
+          <span class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-navy-50 text-navy text-xs font-bold uppercase tracking-wide px-3 py-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-gold"></span> Psych/Soc Specialist
+          </span>
+        </div>
+
+        <!-- MENTOR 4 -->
+        <div class="group rounded-2xl bg-white border border-navy-100 p-7 text-center shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+          <div class="relative mx-auto w-24 h-24">
+            <!-- MENTOR PHOTO: replace the gradient placeholder below with <img class="w-full h-full rounded-full object-cover" src="..." alt="Dr. Sarah Chen" /> -->
+            <div class="gold-ring absolute inset-0 rounded-full p-[3px]">
+              <div class="w-full h-full rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center text-xl font-serif font-bold text-white">SC</div>
+            </div>
+            <span class="absolute -bottom-3 -right-2 flex flex-col items-center justify-center w-12 h-12 rounded-full bg-navy-900 border-2 border-gold text-gold font-extrabold text-base leading-none shadow-soft">523</span>
+          </div>
+          <h3 class="mt-7 text-lg font-bold text-navy">Dr. Sarah Chen</h3>
+          <p class="mt-1 text-sm font-semibold text-gold-dark">Harvard Med</p>
+          <span class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-navy-50 text-navy text-xs font-bold uppercase tracking-wide px-3 py-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-gold"></span> Bio/Biochem Specialist
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CUSTOM? / EXPERT MATCH SECTION (multi-step) -->
+  <section id="features" class="bg-white py-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="inline-flex items-center gap-2 rounded-full bg-gold/10 border border-gold/40 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-gold-dark mb-5">Why Custom?</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy">
+          Generic tutoring hits a target by accident. We engineer it by design.
+        </h2>
+        <p class="mt-5 text-lg text-slatebody leading-relaxed">
+          Your blueprint is built in three deliberate stages — diagnose, hold accountable, and execute a
+          plan made only for you.
+        </p>
+      </div>
+
+      <div class="mt-16 grid md:grid-cols-3 gap-6 lg:gap-8">
+        <!-- STEP 1: Diagnostic — mini simulated score line chart -->
+        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-gold">
           <div class="flex items-center justify-between mb-5">
-            <span class="text-xs font-bold uppercase tracking-wider text-emerald">Step 01</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-gold-dark">Step 01</span>
             <span class="text-sm font-extrabold text-navy-200">01</span>
           </div>
-          <!-- VISUAL: section weakness diagnostic bars -->
-          <div class="mb-6 rounded-xl bg-offwhite border border-navy-100 p-4 space-y-2.5">
-            <div class="flex items-center gap-2"><span class="w-10 text-[10px] font-bold text-slatebody">CARS</span><span class="flex-1 h-2 rounded-full bg-navy-100 overflow-hidden"><span class="block h-full rounded-full bg-gold" style="width:42%"></span></span></div>
-            <div class="flex items-center gap-2"><span class="w-10 text-[10px] font-bold text-slatebody">C/P</span><span class="flex-1 h-2 rounded-full bg-navy-100 overflow-hidden"><span class="block h-full rounded-full bg-emerald" style="width:74%"></span></span></div>
-            <div class="flex items-center gap-2"><span class="w-10 text-[10px] font-bold text-slatebody">B/B</span><span class="flex-1 h-2 rounded-full bg-navy-100 overflow-hidden"><span class="block h-full rounded-full bg-gold" style="width:55%"></span></span></div>
-            <div class="flex items-center gap-2"><span class="w-10 text-[10px] font-bold text-slatebody">P/S</span><span class="flex-1 h-2 rounded-full bg-navy-100 overflow-hidden"><span class="block h-full rounded-full bg-emerald" style="width:83%"></span></span></div>
+          <!-- VISUAL: simulated score line chart trending up -->
+          <div class="mb-6 rounded-xl bg-offwhite border border-navy-100 p-4">
+            <div class="flex items-center justify-between mb-1 text-[10px] font-bold text-slatebody">
+              <span>508</span><span class="text-gold-dark">Target 520</span>
+            </div>
+            <svg viewBox="0 0 120 56" class="w-full h-16" preserveAspectRatio="none">
+              <line x1="0" y1="42" x2="120" y2="42" stroke="#D3DCE8" stroke-width="1"/>
+              <line x1="0" y1="22" x2="120" y2="22" stroke="#D3DCE8" stroke-width="1"/>
+              <polyline points="2,46 24,42 46,36 68,26 92,16 118,6" fill="none" stroke="#A07C2E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="2" cy="46" r="2.6" fill="#0B192C"/>
+              <circle cx="46" cy="36" r="2.6" fill="#0B192C"/>
+              <circle cx="92" cy="16" r="2.6" fill="#0B192C"/>
+              <circle cx="118" cy="6" r="3.4" fill="#A07C2E"/>
+            </svg>
           </div>
-          <h3 class="text-lg font-bold text-navy mb-2">Diagnostic &amp; Profile</h3>
-          <p class="text-sm text-slatebody leading-relaxed">A full diagnostic pinpoints your exact section weaknesses and target score — no guessing.</p>
+          <h3 class="text-lg font-bold text-navy mb-2">Diagnostic</h3>
+          <p class="text-sm text-slatebody leading-relaxed">A full diagnostic establishes your baseline and pinpoints your individual target score — every session has a number to hit.</p>
         </div>
 
-        <!-- Step 2: Expert Match — custom matched-specialist visual -->
-        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-emerald">
+        <!-- STEP 2: Accountability Built In — structured horizontal checklist -->
+        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-gold">
           <div class="flex items-center justify-between mb-5">
-            <span class="text-xs font-bold uppercase tracking-wider text-emerald">Step 02</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-gold-dark">Step 02</span>
             <span class="text-sm font-extrabold text-navy-200">02</span>
           </div>
-          <!-- VISUAL: student linked to matched specialist -->
-          <div class="mb-6 rounded-xl bg-offwhite border border-navy-100 p-4 flex items-center justify-center gap-1.5 h-[88px]">
-            <div class="flex flex-col items-center gap-1">
-              <div class="w-11 h-11 rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center text-[11px] font-bold text-white">You</div>
-              <span class="text-[9px] font-semibold text-slatebody uppercase tracking-wide">Student</span>
+          <!-- VISUAL: structured accountability checklist -->
+          <div class="mb-6 rounded-xl bg-offwhite border border-navy-100 p-4 space-y-2.5">
+            <div class="flex items-center gap-2.5">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-md bg-gold text-navy-900 shrink-0"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
+              <span class="flex-1 h-2 rounded-full bg-navy-100"></span>
             </div>
-            <div class="flex-1 flex items-center -mt-4">
-              <span class="flex-1 border-t-2 border-dashed border-navy-200"></span>
-              <span class="mx-1 inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald text-white shadow"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
-              <span class="flex-1 border-t-2 border-dashed border-navy-200"></span>
+            <div class="flex items-center gap-2.5">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-md bg-gold text-navy-900 shrink-0"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
+              <span class="flex-1 h-2 rounded-full bg-navy-100"></span>
             </div>
-            <div class="flex flex-col items-center gap-1">
-              <div class="w-11 h-11 rounded-full bg-gradient-to-br from-emerald to-emerald-hover flex items-center justify-center text-[11px] font-bold text-white ring-2 ring-gold ring-offset-2 ring-offset-offwhite">1%</div>
-              <span class="text-[9px] font-semibold text-slatebody uppercase tracking-wide">Expert</span>
+            <div class="flex items-center gap-2.5">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-md bg-gold text-navy-900 shrink-0"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
+              <span class="flex-1 h-2 rounded-full bg-navy-100"></span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-md bg-white border-2 border-navy-100 shrink-0"></span>
+              <span class="flex-1 h-2 rounded-full bg-navy-50"></span>
             </div>
           </div>
-          <h3 class="text-lg font-bold text-navy mb-2">Expert Match</h3>
-          <p class="text-sm text-slatebody leading-relaxed">You're hand-paired with a verified specialist who scored in the top 1% on your weak sections.</p>
+          <h3 class="text-lg font-bold text-navy mb-2">Accountability Built In</h3>
+          <p class="text-sm text-slatebody leading-relaxed">Tracked diagnostics, homework, and weekly milestones keep both you and your mentor on target — nothing slips.</p>
         </div>
 
-        <!-- Step 3: Targeted Plan — custom study calendar checklist -->
-        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-emerald">
+        <!-- STEP 3: Targeted Plan — small grid calendar UI -->
+        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-gold">
           <div class="flex items-center justify-between mb-5">
-            <span class="text-xs font-bold uppercase tracking-wider text-emerald">Step 03</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-gold-dark">Step 03</span>
             <span class="text-sm font-extrabold text-navy-200">03</span>
           </div>
-          <!-- VISUAL: mini study calendar with completed days -->
+          <!-- VISUAL: mini study calendar grid -->
           <div class="mb-6 rounded-xl bg-offwhite border border-navy-100 p-4">
             <div class="grid grid-cols-7 gap-1 mb-1.5">
               <span class="text-center text-[8px] font-bold text-slatebody">S</span>
@@ -347,238 +420,82 @@
               <span class="text-center text-[8px] font-bold text-slatebody">S</span>
             </div>
             <div class="grid grid-cols-7 gap-1">
-              <!-- Completed days show an emerald check; planned days are subtle dots -->
-              <span class="aspect-square rounded bg-emerald flex items-center justify-center"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
-              <span class="aspect-square rounded bg-emerald flex items-center justify-center"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
+              <span class="aspect-square rounded bg-gold flex items-center justify-center"><svg class="w-2.5 h-2.5 text-navy-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
+              <span class="aspect-square rounded bg-gold flex items-center justify-center"><svg class="w-2.5 h-2.5 text-navy-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
               <span class="aspect-square rounded bg-white border border-navy-100"></span>
-              <span class="aspect-square rounded bg-emerald flex items-center justify-center"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
+              <span class="aspect-square rounded bg-gold flex items-center justify-center"><svg class="w-2.5 h-2.5 text-navy-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
               <span class="aspect-square rounded bg-white border border-navy-100"></span>
-              <span class="aspect-square rounded bg-gold/30 border border-gold/50"></span>
+              <span class="aspect-square rounded bg-navy-800"></span>
               <span class="aspect-square rounded bg-white border border-navy-100"></span>
-              <span class="aspect-square rounded bg-emerald flex items-center justify-center"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
+              <span class="aspect-square rounded bg-gold flex items-center justify-center"><svg class="w-2.5 h-2.5 text-navy-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
               <span class="aspect-square rounded bg-white border border-navy-100"></span>
-              <span class="aspect-square rounded bg-emerald flex items-center justify-center"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
+              <span class="aspect-square rounded bg-gold flex items-center justify-center"><svg class="w-2.5 h-2.5 text-navy-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></span>
               <span class="aspect-square rounded bg-white border border-navy-100"></span>
-              <span class="aspect-square rounded bg-gold/30 border border-gold/50"></span>
+              <span class="aspect-square rounded bg-navy-800"></span>
               <span class="aspect-square rounded bg-white border border-navy-100"></span>
               <span class="aspect-square rounded bg-white border border-navy-100"></span>
             </div>
           </div>
           <h3 class="text-lg font-bold text-navy mb-2">Targeted Plan</h3>
-          <p class="text-sm text-slatebody leading-relaxed">A custom study roadmap built around your gaps and timeline — never generic, recycled content.</p>
-        </div>
-
-        <!-- Step 4: Plateau Breakthrough — custom score progression indicator -->
-        <div class="group rounded-2xl border border-navy-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-emerald">
-          <div class="flex items-center justify-between mb-5">
-            <span class="text-xs font-bold uppercase tracking-wider text-emerald">Step 04</span>
-            <span class="text-sm font-extrabold text-navy-200">04</span>
-          </div>
-          <!-- VISUAL: simulated score progression breaking the plateau -->
-          <div class="mb-6 rounded-xl bg-offwhite border border-navy-100 p-4">
-            <div class="flex items-center justify-between mb-2 text-[10px] font-bold">
-              <span class="text-slatebody">508</span>
-              <svg class="w-3 h-3 text-emerald" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 3a1 1 0 01.7.29l5 5a1 1 0 01-1.4 1.42L11 6.41V16a1 1 0 11-2 0V6.41L5.7 9.71a1 1 0 11-1.4-1.42l5-5A1 1 0 0110 3z" clip-rule="evenodd"/></svg>
-              <span class="text-emerald">519</span>
-            </div>
-            <div class="relative flex items-end justify-between gap-1.5 h-[60px]">
-              <!-- dashed plateau line being broken -->
-              <span class="absolute left-0 right-0 top-[58%] border-t border-dashed border-gold/70"></span>
-              <span class="flex-1 rounded-t bg-navy-200" style="height:38%"></span>
-              <span class="flex-1 rounded-t bg-navy-200" style="height:42%"></span>
-              <span class="flex-1 rounded-t bg-navy-200" style="height:40%"></span>
-              <span class="flex-1 rounded-t bg-navy-200" style="height:44%"></span>
-              <span class="flex-1 rounded-t bg-emerald-light" style="height:66%"></span>
-              <span class="flex-1 rounded-t bg-emerald" style="height:88%"></span>
-              <span class="flex-1 rounded-t bg-emerald" style="height:100%"></span>
-            </div>
-          </div>
-          <h3 class="text-lg font-bold text-navy mb-2">Plateau Breakthrough</h3>
-          <p class="text-sm text-slatebody leading-relaxed">Measurable, tracked score gains — guaranteed. We turn a stalled score into a competitive one.</p>
+          <p class="text-sm text-slatebody leading-relaxed">A custom study roadmap built around your gaps and timeline — high-yield work scheduled to peak you on test day.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MEET OUR TOP 1% TUTORS -->
-  <section id="tutors" class="bg-offwhite py-24">
+  <!-- RESULTS BAND -->
+  <section id="results" class="guarantee-depth text-white py-16">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <div class="text-center mb-10">
+        <span class="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-gold mb-4">The Results</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-extrabold tracking-tight">Outcomes that earn the guarantee.</h2>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="text-center rounded-2xl bg-white/5 ring-1 ring-white/10 py-8 px-4">
+          <div class="font-serif text-4xl sm:text-5xl font-extrabold text-gold">Top 1%</div>
+          <p class="mt-2 text-sm text-navy-100/80">Every mentor verified</p>
+        </div>
+        <div class="text-center rounded-2xl bg-white/5 ring-1 ring-white/10 py-8 px-4">
+          <div class="font-serif text-4xl sm:text-5xl font-extrabold text-gold">500+</div>
+          <p class="mt-2 text-sm text-navy-100/80">Custom blueprints built</p>
+        </div>
+        <div class="text-center rounded-2xl bg-white/5 ring-1 ring-white/10 py-8 px-4">
+          <div class="font-serif text-4xl sm:text-5xl font-extrabold text-gold">94%</div>
+          <p class="mt-2 text-sm text-navy-100/80">Reach their target score</p>
+        </div>
+        <div class="text-center rounded-2xl bg-white/5 ring-1 ring-white/10 py-8 px-4">
+          <div class="font-serif text-4xl sm:text-5xl font-extrabold text-gold">100%</div>
+          <p class="mt-2 text-sm text-navy-100/80">1-on-1, custom-matched</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE BLUEPRINT — Your Custom Score Roadmap -->
+  <section id="blueprint" class="bg-white py-24">
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="max-w-3xl mx-auto text-center">
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-emerald mb-4">The People Behind the Score</p>
-        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy">
-          Meet Our Top 1% Tutors
-        </h2>
-        <p class="mt-5 text-lg text-slatebody leading-relaxed">
-          Verified high scorers from the nation's most prestigious medical programs — each hand-selected
-          for the section they teach. Real specialists, not generalists.
-        </p>
-      </div>
-
-      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
-        <!-- TUTOR 1 -->
-        <div class="group rounded-2xl bg-white border border-navy-100 p-8 text-center shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift">
-          <div class="relative mx-auto w-28 h-28">
-            <!-- TUTOR PHOTO: replace the gradient placeholder div below with <img class="w-full h-full rounded-full object-cover" src="..." alt="Dr. Sarah Chen" /> -->
-            <div class="headshot-ring absolute inset-0 rounded-full p-[3px]">
-              <div class="w-full h-full rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center text-2xl font-serif font-bold text-white">SC</div>
-            </div>
-            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full bg-gold text-navy-900 text-xs font-extrabold px-3 py-1 shadow-soft whitespace-nowrap">
-              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.784.57-1.838-.196-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.075 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.286-3.957z"/></svg>
-              Score: 521
-            </span>
-          </div>
-          <h3 class="mt-7 text-xl font-bold text-navy">Dr. Sarah Chen</h3>
-          <p class="mt-1 text-sm font-semibold text-gold-dark">Harvard Medical School</p>
-          <span class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-emerald/10 text-emerald text-xs font-bold uppercase tracking-wide px-3 py-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald"></span>
-            Bio / Biochem Specialist
-          </span>
-        </div>
-
-        <!-- TUTOR 2 -->
-        <div class="group rounded-2xl bg-white border border-navy-100 p-8 text-center shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift">
-          <div class="relative mx-auto w-28 h-28">
-            <!-- TUTOR PHOTO: replace the gradient placeholder div below with <img class="w-full h-full rounded-full object-cover" src="..." alt="Dr. Marcus Reed" /> -->
-            <div class="headshot-ring absolute inset-0 rounded-full p-[3px]">
-              <div class="w-full h-full rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center text-2xl font-serif font-bold text-white">MR</div>
-            </div>
-            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full bg-gold text-navy-900 text-xs font-extrabold px-3 py-1 shadow-soft whitespace-nowrap">
-              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.784.57-1.838-.196-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.075 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.286-3.957z"/></svg>
-              Score: 523
-            </span>
-          </div>
-          <h3 class="mt-7 text-xl font-bold text-navy">Dr. Marcus Reed</h3>
-          <p class="mt-1 text-sm font-semibold text-gold-dark">Johns Hopkins School of Medicine</p>
-          <span class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-emerald/10 text-emerald text-xs font-bold uppercase tracking-wide px-3 py-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald"></span>
-            Chem / Phys Specialist
-          </span>
-        </div>
-
-        <!-- TUTOR 3 -->
-        <div class="group rounded-2xl bg-white border border-navy-100 p-8 text-center shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift">
-          <div class="relative mx-auto w-28 h-28">
-            <!-- TUTOR PHOTO: replace the gradient placeholder div below with <img class="w-full h-full rounded-full object-cover" src="..." alt="Dr. Priya Nair" /> -->
-            <div class="headshot-ring absolute inset-0 rounded-full p-[3px]">
-              <div class="w-full h-full rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center text-2xl font-serif font-bold text-white">PN</div>
-            </div>
-            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full bg-gold text-navy-900 text-xs font-extrabold px-3 py-1 shadow-soft whitespace-nowrap">
-              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.784.57-1.838-.196-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.075 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.286-3.957z"/></svg>
-              Score: 520
-            </span>
-          </div>
-          <h3 class="mt-7 text-xl font-bold text-navy">Dr. Priya Nair</h3>
-          <p class="mt-1 text-sm font-semibold text-gold-dark">Stanford University School of Medicine</p>
-          <span class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-emerald/10 text-emerald text-xs font-bold uppercase tracking-wide px-3 py-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald"></span>
-            CARS &amp; Psych / Soc
-          </span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GUARANTEE -->
-  <section id="guarantee" class="relative overflow-hidden guarantee-depth text-white py-24">
-    <!-- fine micro-grid pattern overlay -->
-    <div class="micro-grid absolute inset-0 pointer-events-none"></div>
-
-    <div class="relative max-w-5xl mx-auto px-5 sm:px-8">
-      <!-- CERTIFICATE FRAME -->
-      <div class="certificate relative rounded-2xl px-6 sm:px-12 py-14 text-center">
-        <span class="cert-corner tl"></span>
-        <span class="cert-corner tr"></span>
-        <span class="cert-corner bl"></span>
-        <span class="cert-corner br"></span>
-
-        <!-- Shield seal -->
-        <div class="mx-auto mb-7 flex items-center justify-center w-20 h-20 rounded-full bg-navy-900 ring-2 ring-gold/60 shadow-lift">
-          <svg class="w-10 h-10 text-gold" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 1l7 2.7v5.4c0 4.86-3.24 8.1-7 9.9-3.76-1.8-7-5.04-7-9.9V3.7L10 1zm3.28 6.7a1 1 0 00-1.56-1.24l-2.62 3.28-1.18-1.18a1 1 0 10-1.42 1.42l2 2a1 1 0 001.5-.09l3.28-4.19z" clip-rule="evenodd"/>
-          </svg>
-        </div>
-
-        <p class="text-xs font-bold uppercase tracking-[0.32em] text-gold mb-5">The Medvance Guarantee</p>
-
-        <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight">
-          10+ Point Increase —<br class="hidden sm:block" />
-          <span class="text-gold">Or Your Money Back.</span><a href="#legal" class="text-gold align-super text-2xl">*</a>
-        </h2>
-
-        <!-- gold rule -->
-        <div class="mx-auto my-7 flex items-center justify-center gap-3">
-          <span class="h-px w-16 bg-gradient-to-r from-transparent to-gold/70"></span>
-          <span class="w-1.5 h-1.5 rotate-45 bg-gold"></span>
-          <span class="h-px w-16 bg-gradient-to-l from-transparent to-gold/70"></span>
-        </div>
-
-        <p class="text-lg sm:text-xl leading-relaxed text-navy-100 max-w-3xl mx-auto">
-          We are confident in our matchmaking method because it works. When the right student
-          meets the right expert, scores move. That conviction is why we put our own revenue on
-          the line — removing the financial risk from one of the most important decisions your
-          family will make.
-        </p>
-      </div>
-
-      <!-- Reassurance sub-points -->
-      <div class="mt-10 grid sm:grid-cols-3 gap-6 text-left">
-        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
-          <div class="flex items-center gap-2 mb-2">
-            <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
-            <h3 class="font-bold text-white">Risk-Free Investment</h3>
-          </div>
-          <p class="text-sm text-navy-100/80 leading-relaxed">Your tuition is protected. Meet the conditions and don't hit the gain — you don't pay.</p>
-        </div>
-        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
-          <div class="flex items-center gap-2 mb-2">
-            <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
-            <h3 class="font-bold text-white">Accountability Built In</h3>
-          </div>
-          <p class="text-sm text-navy-100/80 leading-relaxed">Tracked diagnostics and structured homework keep both you and your tutor on target.</p>
-        </div>
-        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
-          <div class="flex items-center gap-2 mb-2">
-            <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
-            <h3 class="font-bold text-white">We Only Win When You Win</h3>
-          </div>
-          <p class="text-sm text-navy-100/80 leading-relaxed">Our incentives are aligned with your result — your score increase is our success metric.</p>
-        </div>
-      </div>
-
-      <div class="mt-10 text-center">
-        <a href="#pricing" class="inline-flex items-center justify-center rounded-xl bg-emerald hover:bg-emerald-hover text-white text-base font-bold px-8 py-4 shadow-lift transition-all hover:-translate-y-0.5">
-          Build Your Custom Roadmap
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- YOUR CUSTOM SCORE ROADMAP (replaces tiered pricing) -->
-  <section id="pricing" class="bg-white py-24">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="max-w-3xl mx-auto text-center">
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-emerald mb-4">No Cookie-Cutter Plans</p>
+        <span class="inline-flex items-center gap-2 rounded-full bg-gold/10 border border-gold/40 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-gold-dark mb-5">No Cookie-Cutter Plans</span>
         <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy">
           A Tailored MCAT Blueprint Built Exclusively For Your Goals
         </h2>
         <p class="mt-5 text-lg text-slatebody leading-relaxed">
           We don't sell generic hourly blocks. We analyze your diagnostic profile, your target score,
           and your exact timeline — then architect a custom 1-on-1 expert program engineered for peak
-          score performance. Your roadmap is built for you, and only you.
+          score performance. Your blueprint is built for you, and only you.
         </p>
       </div>
 
-      <!-- Blueprint-framed, step-by-step roadmap component -->
+      <!-- Blueprint-framed, step-by-step component -->
       <div class="mt-16 relative blueprint rounded-3xl border border-navy-100 shadow-soft px-5 sm:px-10 py-12 sm:py-14">
-        <!-- Component title -->
         <div class="text-center mb-12">
           <span class="inline-flex items-center gap-2 rounded-full bg-white border border-gold/40 px-5 py-2 text-sm font-serif font-bold tracking-wide text-navy shadow-soft">
-            <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"/></svg>
+            <svg class="w-4 h-4 text-gold-deep" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"/></svg>
             Your Custom Score Roadmap
           </span>
         </div>
 
-        <!-- Desktop stepper: connected numbered nodes -->
+        <!-- Desktop stepper -->
         <div class="relative mb-8 hidden md:block">
           <div class="absolute top-1/2 left-[16.66%] right-[16.66%] -translate-y-1/2 border-t-2 border-dashed border-navy-200"></div>
           <div class="relative grid grid-cols-3">
@@ -591,20 +508,19 @@
         <!-- Three bespoke-variable micro-cards -->
         <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
           <!-- VARIABLE 1: The Target Metrics -->
-          <div class="group rounded-2xl bg-white border border-navy-100 p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-emerald">
+          <div class="group rounded-2xl bg-white border border-navy-100 p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-gold">
             <span class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-full bg-navy-900 text-gold font-serif font-bold text-sm mb-4">01</span>
-            <!-- VISUAL: baseline -> point delta -> target -->
             <div class="mb-6 rounded-xl bg-offwhite border border-navy-100 p-4 flex items-center justify-center gap-3 text-center">
               <div>
                 <div class="text-2xl font-extrabold text-navy">508</div>
                 <div class="text-[10px] font-bold uppercase tracking-wide text-slatebody">Baseline</div>
               </div>
-              <div class="flex flex-col items-center text-emerald">
+              <div class="flex flex-col items-center text-gold-dark">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 10a1 1 0 011-1h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414-1.414L13.586 11H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
                 <span class="text-xs font-extrabold">+12</span>
               </div>
               <div>
-                <div class="text-2xl font-extrabold text-emerald">520</div>
+                <div class="text-2xl font-extrabold text-gold-dark">520</div>
                 <div class="text-[10px] font-bold uppercase tracking-wide text-slatebody">Target</div>
               </div>
             </div>
@@ -613,19 +529,18 @@
           </div>
 
           <!-- VARIABLE 2: The Timeline Calibration -->
-          <div class="group rounded-2xl bg-white border border-navy-100 p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-emerald">
+          <div class="group rounded-2xl bg-white border border-navy-100 p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-gold">
             <span class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-full bg-navy-900 text-gold font-serif font-bold text-sm mb-4">02</span>
-            <!-- VISUAL: weekly milestone timeline across the test runway -->
             <div class="mb-6 rounded-xl bg-offwhite border border-navy-100 p-4">
               <div class="flex items-center justify-between text-[10px] font-bold uppercase tracking-wide text-slatebody mb-3">
                 <span>Today</span><span>Test Day</span>
               </div>
               <div class="relative h-1.5 rounded-full bg-navy-100">
-                <div class="absolute inset-y-0 left-0 w-2/3 rounded-full bg-emerald"></div>
-                <span class="absolute -top-1 left-0 w-3.5 h-3.5 rounded-full bg-emerald ring-2 ring-white"></span>
-                <span class="absolute -top-1 left-1/3 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-emerald ring-2 ring-white"></span>
-                <span class="absolute -top-1 left-2/3 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-emerald ring-2 ring-white"></span>
-                <span class="absolute -top-1 right-0 w-3.5 h-3.5 rounded-full bg-gold ring-2 ring-white"></span>
+                <div class="absolute inset-y-0 left-0 w-2/3 rounded-full bg-gold"></div>
+                <span class="absolute -top-1 left-0 w-3.5 h-3.5 rounded-full bg-gold ring-2 ring-white"></span>
+                <span class="absolute -top-1 left-1/3 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-gold ring-2 ring-white"></span>
+                <span class="absolute -top-1 left-2/3 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-gold ring-2 ring-white"></span>
+                <span class="absolute -top-1 right-0 w-3.5 h-3.5 rounded-full bg-navy-900 ring-2 ring-white"></span>
               </div>
               <div class="flex justify-between mt-3 text-[9px] font-semibold text-slatebody">
                 <span>Wk 1</span><span>Wk 4</span><span>Wk 8</span><span>Wk 12</span>
@@ -636,9 +551,8 @@
           </div>
 
           <!-- VARIABLE 3: The Weakness Deep-Dive -->
-          <div class="group rounded-2xl bg-white border border-navy-100 p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-emerald">
+          <div class="group rounded-2xl bg-white border border-navy-100 p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:border-gold">
             <span class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-full bg-navy-900 text-gold font-serif font-bold text-sm mb-4">03</span>
-            <!-- VISUAL: section chips with isolated bottlenecks -->
             <div class="mb-6 rounded-xl bg-offwhite border border-navy-100 p-4 grid grid-cols-2 gap-2">
               <div class="relative rounded-lg bg-white border-2 border-gold px-3 py-2.5 text-center">
                 <span class="absolute -top-2 -right-2 inline-flex items-center justify-center w-5 h-5 rounded-full bg-gold text-navy-900"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/></svg></span>
@@ -647,7 +561,7 @@
               </div>
               <div class="rounded-lg bg-white border border-navy-100 px-3 py-2.5 text-center">
                 <div class="text-sm font-bold text-slatebody">Chem/Phys</div>
-                <div class="text-[9px] font-semibold uppercase tracking-wide text-emerald">On Track</div>
+                <div class="text-[9px] font-semibold uppercase tracking-wide text-gold-dark">On Track</div>
               </div>
               <div class="relative rounded-lg bg-white border-2 border-gold px-3 py-2.5 text-center">
                 <span class="absolute -top-2 -right-2 inline-flex items-center justify-center w-5 h-5 rounded-full bg-gold text-navy-900"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/></svg></span>
@@ -656,7 +570,7 @@
               </div>
               <div class="rounded-lg bg-white border border-navy-100 px-3 py-2.5 text-center">
                 <div class="text-sm font-bold text-slatebody">Psych/Soc</div>
-                <div class="text-[9px] font-semibold uppercase tracking-wide text-emerald">On Track</div>
+                <div class="text-[9px] font-semibold uppercase tracking-wide text-gold-dark">On Track</div>
               </div>
             </div>
             <h3 class="text-lg font-bold text-navy mb-2">The Weakness Deep-Dive</h3>
@@ -666,8 +580,8 @@
 
         <!-- High-converting CTA to booking -->
         <div class="mt-12 text-center">
-          <a href="#booking" class="inline-flex items-center justify-center gap-2.5 rounded-xl bg-emerald hover:bg-emerald-hover text-white text-base sm:text-lg font-bold px-8 py-4 shadow-lift transition-all hover:-translate-y-0.5">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/></svg>
+          <a href="#booking" class="inline-flex items-center justify-center gap-2.5 rounded-xl bg-navy-800 hover:bg-navy-900 text-white text-base sm:text-lg font-bold px-8 py-4 shadow-lift ring-1 ring-gold/40 transition-all hover:-translate-y-0.5">
+            <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/></svg>
             Request Your Personalized MCAT Roadmap &amp; Quote
           </a>
           <p class="mt-4 text-sm text-slatebody">Free 30-minute strategy consultation · No obligation · Custom quote provided</p>
@@ -676,16 +590,104 @@
     </div>
   </section>
 
+  <!-- GUARANTEE — The Personalized Target Score Commitment -->
+  <section id="guarantee" class="relative overflow-hidden guarantee-depth text-white py-24">
+    <div class="micro-grid absolute inset-0 pointer-events-none"></div>
+
+    <div class="relative max-w-5xl mx-auto px-5 sm:px-8">
+      <div class="certificate relative rounded-2xl px-6 sm:px-12 py-14 text-center">
+        <span class="cert-corner tl"></span>
+        <span class="cert-corner tr"></span>
+        <span class="cert-corner bl"></span>
+        <span class="cert-corner br"></span>
+
+        <!-- CREST OF EXCELLENCE — circular gold badge with curved text -->
+        <div class="mx-auto mb-8 w-44 h-44 relative">
+          <svg viewBox="0 0 200 200" class="w-full h-full" role="img" aria-label="Crest of Excellence: MCAT Blueprint Success Guaranteed">
+            <defs>
+              <path id="crestCircle" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0" />
+            </defs>
+            <!-- outer + inner rings -->
+            <circle cx="100" cy="100" r="92" fill="#060F1C" stroke="#C5A880" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="82" fill="none" stroke="#C5A880" stroke-width="1" opacity="0.6"/>
+            <circle cx="100" cy="100" r="54" fill="none" stroke="#C5A880" stroke-width="1" opacity="0.5"/>
+            <!-- curved text ring -->
+            <g class="crest-spin">
+              <text fill="#C5A880" font-family="'Playfair Display', serif" font-size="13.5" font-weight="700" letter-spacing="2.6">
+                <textPath href="#crestCircle" startOffset="0">MCAT BLUEPRINT • SUCCESS GUARANTEED • </textPath>
+              </text>
+            </g>
+            <!-- central emblem: shield + star -->
+            <path d="M100 64l24 9v15c0 16-11 27-24 33-13-6-24-17-24-33V73l24-9z" fill="none" stroke="#C5A880" stroke-width="2.5"/>
+            <path d="M100 84l3.4 6.9 7.6 1.1-5.5 5.4 1.3 7.6-6.8-3.6-6.8 3.6 1.3-7.6-5.5-5.4 7.6-1.1L100 84z" fill="#C5A880"/>
+          </svg>
+        </div>
+
+        <span class="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.28em] text-gold mb-5">Our Promise</span>
+
+        <h2 class="font-serif text-4xl sm:text-5xl font-extrabold leading-[1.08] tracking-tight">
+          The Personalized<br class="hidden sm:block" />
+          <span class="text-gold">Target Score Commitment.</span><a href="#legal" class="text-gold align-super text-2xl">*</a>
+        </h2>
+
+        <div class="mx-auto my-7 flex items-center justify-center gap-3">
+          <span class="h-px w-16 bg-gradient-to-r from-transparent to-gold/70"></span>
+          <span class="w-1.5 h-1.5 rotate-45 bg-gold"></span>
+          <span class="h-px w-16 bg-gradient-to-l from-transparent to-gold/70"></span>
+        </div>
+
+        <p class="text-lg sm:text-xl leading-relaxed text-navy-100 max-w-3xl mx-auto">
+          Every student starts from a unique place — so a flat promise would be meaningless. Instead, we
+          calculate an <span class="text-white font-semibold">individualized target score potential</span>
+          for you, drawn from your custom diagnostic baseline, your timeline, and your goals. Then we
+          commit — entirely — to that specific peak outcome. If you do the work and don't reach the target
+          we set together, you don't pay.
+        </p>
+      </div>
+
+      <!-- Reassurance sub-points -->
+      <div class="mt-10 grid sm:grid-cols-3 gap-6 text-left">
+        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
+            <h3 class="font-bold text-white">Individually Calibrated</h3>
+          </div>
+          <p class="text-sm text-navy-100/80 leading-relaxed">Your target is set from your own baseline and goals — not a generic, one-size promise.</p>
+        </div>
+        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
+            <h3 class="font-bold text-white">Risk-Free Investment</h3>
+          </div>
+          <p class="text-sm text-navy-100/80 leading-relaxed">Meet the program conditions and miss your target, and your tuition is protected.</p>
+        </div>
+        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 011.42-1.42l2.79 2.79 6.79-6.79a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
+            <h3 class="font-bold text-white">We Only Win When You Win</h3>
+          </div>
+          <p class="text-sm text-navy-100/80 leading-relaxed">Our incentives are tied to your result — your target score is our success metric.</p>
+        </div>
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="#booking" class="inline-flex items-center justify-center rounded-xl bg-gold hover:bg-gold-light text-navy-900 text-base font-bold px-8 py-4 shadow-lift transition-all hover:-translate-y-0.5">
+          Request Your Target Score Assessment
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- BOOKING / CALENDLY -->
   <section id="booking" class="bg-offwhite py-24">
     <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center">
-      <p class="text-sm font-bold uppercase tracking-[0.2em] text-emerald mb-4">Free Consultation</p>
+      <span class="inline-flex items-center gap-2 rounded-full bg-gold/10 border border-gold/40 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-gold-dark mb-5">Free Consultation</span>
       <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy">
-        Book Your Free Strategy Consultation
+        Book Your Strategy Consultation
       </h2>
       <p class="mt-5 text-lg text-slatebody leading-relaxed max-w-2xl mx-auto">
-        In 30 minutes we'll review your timeline, pinpoint your plateau, and map out the exact
-        expert match that gets you to your target score. No pressure — just a clear plan.
+        In 30 minutes we'll review your timeline, pinpoint your bottlenecks, and map the exact expert
+        match and target score for your blueprint. No pressure — just a clear plan.
       </p>
 
       <!-- CALENDLY: Replace YOUR_LINK below with your real Calendly scheduling slug -->
@@ -703,25 +705,23 @@
   <footer class="bg-navy-900 text-white">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16">
       <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
-        <!-- Brand -->
         <div class="max-w-sm">
           <a href="#top" class="flex items-center gap-1.5 font-serif font-extrabold text-xl tracking-tight text-white">
             Medvance Prep
             <span class="inline-block w-2 h-2 rounded-full bg-gold mt-2"></span>
           </a>
           <p class="mt-4 text-sm text-navy-100/70 leading-relaxed">
-            Elite MCAT matchmaking. We pair driven pre-med students with top 1% tutors to break
-            score plateaus and build competitive applications.
+            Elite MCAT matchmaking. We build a custom blueprint and pair you with a top 1% mentor —
+            committed to your individual target score.
           </p>
         </div>
 
-        <!-- Quick links -->
         <nav class="flex flex-col gap-3 text-sm">
           <span class="font-bold uppercase tracking-wider text-navy-100/50 text-xs mb-1">Explore</span>
-          <a href="#features" class="text-navy-100/80 hover:text-gold transition-colors">The Advantage</a>
+          <a href="#features" class="text-navy-100/80 hover:text-gold transition-colors">Why Custom?</a>
           <a href="#tutors" class="text-navy-100/80 hover:text-gold transition-colors">Our Tutors</a>
-          <a href="#guarantee" class="text-navy-100/80 hover:text-gold transition-colors">Guarantee</a>
-          <a href="#pricing" class="text-navy-100/80 hover:text-gold transition-colors">Your Roadmap</a>
+          <a href="#blueprint" class="text-navy-100/80 hover:text-gold transition-colors">The Blueprint</a>
+          <a href="#results" class="text-navy-100/80 hover:text-gold transition-colors">Results</a>
           <a href="#booking" class="text-navy-100/80 hover:text-gold transition-colors">Book a Consultation</a>
         </nav>
       </div>
@@ -730,14 +730,15 @@
 
       <!-- Legal footnote -->
       <div id="legal" class="text-xs text-navy-100/60 leading-relaxed max-w-4xl">
-        <p class="font-semibold text-navy-100/80 mb-1">* Terms &amp; Conditions Apply — 10+ Point Guarantee</p>
+        <p class="font-semibold text-navy-100/80 mb-1">* Terms &amp; Conditions Apply — Personalized Target Score Commitment</p>
         <p>
-          The 10+ point increase guarantee requires 100% session attendance and completion of all
-          assigned diagnostic exams and homework. The guarantee applies only to enrolled students
-          who meet these conditions and complete the full scope of their selected package. Score
-          increase is measured against the diagnostic baseline established at the start of the
-          program. Medvance Prep reserves the right to determine eligibility based on documented
-          program compliance.
+          The Personalized Target Score Commitment applies to the individualized target score established
+          for each enrolled student at the start of their program, based on their diagnostic baseline,
+          timeline, and goals. It requires 100% session attendance and completion of all assigned
+          diagnostic exams and homework. The commitment applies only to enrolled students who meet these
+          conditions and complete the full scope of their blueprint. Score progress is measured against
+          the diagnostic baseline established at the start of the program. Medvance Prep reserves the
+          right to determine eligibility based on documented program compliance.
         </p>
       </div>
 
@@ -781,12 +782,11 @@
     menuBtn.addEventListener("click", () => {
       setMenu(mobileMenu.classList.contains("hidden"));
     });
-    // Close mobile menu after selecting a link
     document.querySelectorAll(".mobile-link").forEach((link) => {
       link.addEventListener("click", () => setMenu(false));
     });
 
-    // Smooth scroll with sticky-navbar offset (JS fallback for all anchor links)
+    // Smooth scroll with sticky-navbar offset (fallback for all anchor links)
     const NAV_OFFSET = 80;
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (e) {
