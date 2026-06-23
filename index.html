@@ -9,6 +9,9 @@
     content="Medvance Prep builds a custom MCAT blueprint matched to a top 1% tutor — a tailored path to your individual target score, guaranteed."
   />
 
+  <!-- FAVICON: Medvance "M" monogram (inline SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 104'%3E%3Ctext x='60' y='83' text-anchor='middle' font-family='Georgia,serif' font-size='94' font-weight='800' fill='%230B192C'%3EM%3C/text%3E%3Cpath d='M120 0 l4 12 12 4 -12 4 -4 12 -4 -12 -12 -4 12 -4 z' fill='%23C5A880'/%3E%3C/svg%3E" />
+
   <!-- FONTS: Inter (body) + Playfair Display (prestige serif headings) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -139,9 +142,19 @@
     class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white/85 backdrop-blur-md border-b border-transparent"
   >
     <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
-      <a href="#top" class="flex items-center gap-1.5 font-serif font-extrabold text-xl tracking-tight text-navy">
-        Medvance Prep
-        <span class="inline-block w-2 h-2 rounded-full bg-gold mt-2"></span>
+      <a href="#top" class="flex items-center gap-2.5 font-serif font-extrabold text-xl tracking-tight text-navy">
+        <!-- LOGO: Medvance "M" monogram -->
+        <svg class="h-9 w-auto shrink-0" viewBox="0 0 140 104" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="mvGoldNav" x1="8" y1="92" x2="132" y2="10" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#A07C2E"/><stop offset=".5" stop-color="#E3D2AE"/><stop offset="1" stop-color="#C5A880"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="60" cy="66" rx="56" ry="18" transform="rotate(-20 60 66)" stroke="url(#mvGoldNav)" stroke-width="5"/>
+          <text x="60" y="83" text-anchor="middle" font-family="'Playfair Display', ui-serif, Georgia, serif" font-size="94" font-weight="800" fill="#0B192C">M</text>
+          <path d="M120 0 l4 12 12 4 -12 4 -4 12 -4 -12 -12 -4 12 -4 z" fill="url(#mvGoldNav)"/>
+        </svg>
+        <span>Medvance Prep</span>
       </a>
 
       <!-- Desktop links -->
@@ -854,9 +867,19 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16">
       <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
         <div class="max-w-sm">
-          <a href="#top" class="flex items-center gap-1.5 font-serif font-extrabold text-xl tracking-tight text-white">
-            Medvance Prep
-            <span class="inline-block w-2 h-2 rounded-full bg-gold mt-2"></span>
+          <a href="#top" class="flex items-center gap-2.5 font-serif font-extrabold text-xl tracking-tight text-white">
+            <!-- LOGO: Medvance "M" monogram (white M for dark footer) -->
+            <svg class="h-9 w-auto shrink-0" viewBox="0 0 140 104" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="mvGoldFoot" x1="8" y1="92" x2="132" y2="10" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#A07C2E"/><stop offset=".5" stop-color="#E3D2AE"/><stop offset="1" stop-color="#C5A880"/>
+                </linearGradient>
+              </defs>
+              <ellipse cx="60" cy="66" rx="56" ry="18" transform="rotate(-20 60 66)" stroke="url(#mvGoldFoot)" stroke-width="5"/>
+              <text x="60" y="83" text-anchor="middle" font-family="'Playfair Display', ui-serif, Georgia, serif" font-size="94" font-weight="800" fill="#FFFFFF">M</text>
+              <path d="M120 0 l4 12 12 4 -12 4 -4 12 -4 -12 -12 -4 12 -4 z" fill="url(#mvGoldFoot)"/>
+            </svg>
+            <span>Medvance Prep</span>
           </a>
           <p class="mt-4 text-sm text-navy-100/70 leading-relaxed">
             Elite MCAT matchmaking. We build a custom blueprint and pair you with a top 1% mentor —
